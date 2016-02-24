@@ -1,20 +1,18 @@
-dirs := l7/ s22/
+dirs := s22/ s66x8/
 
 .PHONY: ${dirs}
 
 all: ${dirs}
 
-${dirs}: | geomlinks
+${dirs}: | geomlib.py
 	@cd $@ && ${MAKE}
 	
-geomlinks: $(addsuffix geomlib.py,${dirs})
-
-%/geomlib.py:
-	ln -s ../$(notdir $@) $@
+geomlib.py:
+	wget https://raw.githubusercontent.com/azag0/caf/79527a6e6247d0bd96790fc72e7ebc2891bd20a7/caflib/Tools/geomlib.py
 
 clean:
-	-rm */geomlib.py
 	for d in ${dirs}; do ${MAKE} -C $$d clean; done
 
 distclean:
+	-rm */geomlib.py
 	for d in ${dirs}; do ${MAKE} -C $$d distclean; done

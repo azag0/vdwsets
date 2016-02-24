@@ -1,5 +1,4 @@
-#!/usr/bin/env python
-import re
+#!/usr/bin/env python3
 import sys
 from pathlib import Path
 import geomlib
@@ -8,38 +7,38 @@ import csv
 from difflib import SequenceMatcher
 
 
-def similar(a, b):
+def similarity(a, b):
     return SequenceMatcher(None, a, b).ratio()
 
 
+energies = json.load(sys.stdin)
+prefix = Path(sys.argv[1])
+paths = map(Path, sys.argv[2:])
+
 geoms = []
-for path in sys.argv[1:]:
-    path = Path(path)
+for path in paths:
     geom = geomlib.readfile(path)
-    code, label = re.findall(r'(\d+)_(\w+)', path.stem)[0]
+    code, label = path.stem.split('_')
     code = int(code)
-    frags = geom.getfragments()
-    try:
-        assert len(frags) == 2 and geomlib.concat(frags) == geom
-    except AssertionError:
-        sys.stderr.write('Error: {} ({}) was not fragmented correctly\n'
-                         .format(label, code))
+    frags = geom.get_fragments()
+    if not (len(frags) == 2 and geomlib.concat(frags) == geom):
+        print('error: {} ({}) was not fragmented correctly'.format(label, code),
+              file=sys.stderr)
     geoms.append({'label': label,
                   'code': code,
                   'complex': geom,
                   'fragments': frags})
 
 geoms.sort(key=lambda x: x['code'])
-geomlbls = [g['label'] for g in geoms]
-energies = json.load(sys.stdin)
-enelbls = [row['system name'] for row in energies]
+geom_labels = [g['label'] for g in geoms]
+energy_labels = [row['system name'] for row in energies]
 energies = [energies[l.index(max(l))] for l in
-            [[similar(a, b) for a in enelbls] for b in geomlbls]]
+            [[similarity(a, b) for a in energy_labels] for b in geom_labels]]
 
 writer = csv.DictWriter(sys.stdout, fieldnames=energies[0].keys())
 writer.writeheader()
 writer.writerows(energies)
 for idx, row in enumerate(geoms):
-    row['complex'].write('{}-complex.xyz'.format(idx+1))
-    for i in range(2):
-        row['fragments'][i].write('{}-monomer-{}.xyz'.format(idx+1, i+1))
+    row['complex'].write(prefix/'{}-complex.xyz'.format(idx+1))
+    for i, fragment in enumerate(row['fragments']):
+        fragment.write(prefix/'{}-monomer-{}.xyz'.format(idx+1, i+1))

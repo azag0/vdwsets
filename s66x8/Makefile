@@ -1,5 +1,5 @@
-sources = suppl-info.txt structures.zip energies.csv article.pdf
-doi = 10.1039/b600027d
+sources = structures.zip energies.csv article.pdf
+doi = 10.1021/ct2002946
 
 all: download
 	$(eval tmpdir := $(shell mktemp -d))
@@ -17,18 +17,15 @@ download: $(addprefix src/,${sources})
 
 build/energies.csv: src/energies.csv
 
-src/suppl-info.txt: | src
-	wget -O $@ http://www.rsc.org/suppdata/cp/b6/b600027d/geometries-s22.xyz
-
 src/article.pdf: | src
-	wget -O $@ http://pubs.rsc.org/en/content/articlepdf/2006/cp/b600027d
+	wget -O $@ http://pubs.acs.org/doi/pdfplus/10.1021/ct2002946
 
 src/structures.zip: | src
-	wget -O $@ http://www.begdb.com/moldown.php?id=4
+	wget -O $@ http://www.begdb.com/moldown.php?id=26
 
 src/energies.csv: | src
 	@echo "Go to"
-	@echo "http://www.begdb.com/index.php?action=oneDataset&id=4&state=show"
+	@echo "http://www.begdb.com/index.php?action=oneDataset&id=26&state=show"
 	@echo "click on the csv icon and download the file."
 	@read -p "Enter path to csv file: " path; \
 		[[ -e "$$path" ]] && cp "$$path" $@ \
