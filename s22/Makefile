@@ -7,7 +7,7 @@ all: download
 	for f in ${tmpdir}/*.xyz; do sed -i "" '/[^[:space:]]/,$$!d' $$f; done
 	mkdir -p build/geoms
 	python3 ../sanitize.py <src/energies.csv |\
-		PYTHONPATH=.. python3 finalize.py build/geoms ${tmpdir}/*.xyz >build/energies.csv
+		PYTHONPATH=.. python3 finalize.py build/geoms ${tmpdir}/*.xyz >build/energies.json
 	rm -r ${tmpdir}
 
 web:
@@ -15,7 +15,7 @@ web:
 
 download: $(addprefix src/,${sources})
 
-build/energies.csv: src/energies.csv
+build/energies.json: src/energies.csv
 
 src/suppl-info.txt: | src
 	wget -O $@ http://www.rsc.org/suppdata/cp/b6/b600027d/geometries-s22.xyz

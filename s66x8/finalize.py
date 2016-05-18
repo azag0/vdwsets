@@ -3,7 +3,6 @@ import sys
 from pathlib import Path
 import geomlib
 import json
-import csv
 
 
 energies = json.load(sys.stdin)
@@ -25,9 +24,7 @@ for path in paths:
                   'complex': geom,
                   'fragments': frags})
 
-writer = csv.DictWriter(sys.stdout, fieldnames=energies[0].keys())
-writer.writeheader()
-writer.writerows(energies)
+json.dump(energies, sys.stdout)
 
 for row in geoms:
     idx = '{}-{}'.format(row['idx'], row['scale'])

@@ -3,7 +3,6 @@ import sys
 from pathlib import Path
 import geomlib
 import json
-import csv
 from difflib import SequenceMatcher
 
 
@@ -35,9 +34,7 @@ energy_labels = [row['system name'] for row in energies]
 energies = [energies[l.index(max(l))] for l in
             [[similarity(a, b) for a in energy_labels] for b in geom_labels]]
 
-writer = csv.DictWriter(sys.stdout, fieldnames=energies[0].keys())
-writer.writeheader()
-writer.writerows(energies)
+json.dump(energies, sys.stdout)
 for idx, row in enumerate(geoms):
     row['complex'].write(prefix/'{}-complex.xyz'.format(idx+1))
     for i, fragment in enumerate(row['fragments']):
