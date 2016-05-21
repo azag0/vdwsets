@@ -1,1 +1,3 @@
-A collection of datasets in computational chemistry. Each set has its own makefile which downloads materials from the internet, processes them and saves in a unified format.
+# Computational chemistry datasets
+
+A collection of datasets in computational chemistry. Each set is downloaded from the Internet, processed and stored in a unified format.

@@ -1,4 +1,5 @@
-__pycache__
-/*/build
-/*/src
+/*/geoms
+/*/energies.json
+/*/res/*
 /geomlib.py
+*.pyc

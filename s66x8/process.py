@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import sys
 from pathlib import Path
+sys.path.append('..')
 import geomlib
 import json
 
@@ -16,8 +17,10 @@ for path in paths:
     idx, label, scale = int(label[0:2]), label[2:-3], float(label[-3:])/100
     frags = geom.get_fragments()
     if not (len(frags) == 2 and geomlib.concat(frags) == geom):
-        print('error: {} ({}) was not fragmented correctly'.format(label, scale),
-              file=sys.stderr)
+        print(
+            'error: {} ({}) was not fragmented correctly'.format(label, scale),
+            file=sys.stderr
+        )
     geoms.append({'label': label,
                   'idx': idx,
                   'scale': scale,
@@ -28,6 +31,6 @@ json.dump(energies, sys.stdout)
 
 for row in geoms:
     idx = '{}-{}'.format(row['idx'], row['scale'])
-    row['complex'].write(prefix/'{}-complex.xyz'.format(idx))
+    row['complex'].write(prefix/'{}-complex-0.xyz'.format(idx))
     for i, fragment in enumerate(row['fragments']):
         fragment.write(prefix/'{}-monomer-{}.xyz'.format(idx, i+1))

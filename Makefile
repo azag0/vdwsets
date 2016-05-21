@@ -1,18 +1,18 @@
-dirs := s22/ s66x8/
+DIRS := s22 s66x8 l7 s12l
 
-.PHONY: ${dirs}
+.PHONY: $(DIRS)
 
-all: ${dirs}
+all: $(DIRS)
 
-${dirs}: | geomlib.py
-	@cd $@ && ${MAKE}
-	
+$(DIRS): | geomlib.py
+	@$(MAKE) -C $@
+
 geomlib.py:
-	wget https://raw.githubusercontent.com/azag0/caf/79527a6e6247d0bd96790fc72e7ebc2891bd20a7/caflib/Tools/geomlib.py
+	wget https://raw.githubusercontent.com/azag0/caf/79527a6e6247d0bd96790fc72e7ebc2891bd20a7/caflib/Tools/$@
 
 clean:
-	for d in ${dirs}; do ${MAKE} -C $$d clean; done
+	for d in $(DIRS); do $(MAKE) -C $$d clean; done
 
 distclean:
-	-rm */geomlib.py
-	for d in ${dirs}; do ${MAKE} -C $$d distclean; done
+	for d in $(DIRS); do $(MAKE) -C $$d distclean; done
+	rm -f geomlib.py

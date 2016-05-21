@@ -1,42 +1,27 @@
-sources = structures.zip energies.csv article.pdf
-doi = 10.1021/ct400036b
+all: build
 
-all: download
-	$(eval tmpdir := $(shell mktemp -d))
-	tar -C ${tmpdir} -xf src/structures.zip
-	for f in ${tmpdir}/*.xyz; do sed -i "" '/[^[:space:]]/,$$!d' $$f; done
-	mkdir -p build/geoms
-	python3 ../sanitize.py <src/energies.csv |\
-		PYTHONPATH=.. python3 finalize.py build/geoms ${tmpdir}/*.xyz >build/energies.csv
-	rm -r ${tmpdir}
+build: energies.json
 
-web:
-	open http://dx.doi.org/${doi}
+energies.json: process.py | res/structures.zip res/energies.csv
+	$(eval TMPDIR != mktemp -d)
+	tar -C $(TMPDIR) -xf res/structures.zip
+	for f in $(TMPDIR)/*.xyz; do sed -i "" '/[^[:space:]]/,$$!d' $$f; done
+	mkdir -p geoms
+	../csv2json.py <res/energies.csv | ./$^ geoms $(TMPDIR)/*.xyz >$@
+	rm -r $(TMPDIR)
 
-download: $(addprefix src/,${sources})
-
-src/suppl-info.pdf: | src
-	wget -O $@ http://pubs.acs.org/doi/suppl/10.1021/ct400036b/suppl_file/ct400036b_si_002.pdf
-
-src/article.pdf: | src
-	wget -O $@ http://pubs.acs.org/doi/pdfplus/10.1021/ct400036b
-
-src/structures.zip: | src
+res/structures.zip:
 	wget -O $@ http://www.begdb.com/moldown.php?id=40
 
-src/energies.csv: | src
-	@echo "Go to"
-	@echo "http://www.begdb.com/index.php?action=oneDataset&id=40&state=show"
-	@echo "click on the csv icon and download the file."
-	@read -p "Enter path to csv file: " path; \
-		[[ -e "$$path" ]] && cp "$$path" $@ \
-		|| { echo "Error: $$path does not exist, exiting..." && exit 1; }
-
-src:
-	mkdir src
+res/energies.csv:
+	$(error $@ needs to be downloaded manually at http://www.begdb.com/index.php?action=oneDataset&id=40&state=show)
 
 clean:
-	-rm -r build
+	rm -rf geoms energies.json
 
 distclean: clean
-	-rm -r src
+	rm -f res/structures.zip
+
+web:
+	open http://dx.doi.org/10.1021/ct400036b
+

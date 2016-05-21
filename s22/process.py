@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import sys
 from pathlib import Path
+sys.path.append('..')
 import geomlib
 import json
 from difflib import SequenceMatcher
@@ -21,8 +22,10 @@ for path in paths:
     code = int(code)
     frags = geom.get_fragments()
     if not (len(frags) == 2 and geomlib.concat(frags) == geom):
-        print('error: {} ({}) was not fragmented correctly'.format(label, code),
-              file=sys.stderr)
+        print(
+            'error: {} ({}) was not fragmented correctly'.format(label, code),
+            file=sys.stderr
+        )
     geoms.append({'label': label,
                   'code': code,
                   'complex': geom,
@@ -31,11 +34,12 @@ for path in paths:
 geoms.sort(key=lambda x: x['code'])
 geom_labels = [g['label'] for g in geoms]
 energy_labels = [row['system name'] for row in energies]
-energies = [energies[l.index(max(l))] for l in
-            [[similarity(a, b) for a in energy_labels] for b in geom_labels]]
+energies = [energies[l.index(max(l))] for l in [
+    [similarity(a, b) for a in energy_labels] for b in geom_labels
+]]
 
 json.dump(energies, sys.stdout)
 for idx, row in enumerate(geoms):
-    row['complex'].write(prefix/'{}-complex.xyz'.format(idx+1))
+    row['complex'].write(prefix/'{}-complex-0.xyz'.format(idx+1))
     for i, fragment in enumerate(row['fragments']):
         fragment.write(prefix/'{}-monomer-{}.xyz'.format(idx+1, i+1))
