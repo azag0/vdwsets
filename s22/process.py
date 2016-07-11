@@ -40,6 +40,6 @@ energies = [energies[l.index(max(l))] for l in [
 
 json.dump(energies, sys.stdout)
 for idx, row in enumerate(geoms):
-    row['complex'].write(prefix/'{}-complex-0.xyz'.format(idx+1))
+    row['complex'].write(prefix/'{:02}-complex-0.xyz'.format(idx+1))
     for i, fragment in enumerate(row['fragments']):
-        fragment.write(prefix/'{}-monomer-{}.xyz'.format(idx+1, i+1))
+        fragment.write(prefix/'{:02}-monomer-{}.xyz'.format(idx+1, i+1))

@@ -2,7 +2,7 @@
 import sys
 from pathlib import Path
 sys.path.append('..')
-import geomlib
+from caflib.Tools import geomlib
 import json
 from difflib import SequenceMatcher
 
@@ -21,18 +21,12 @@ for path in paths:
     code, label = path.stem.split('_')
     code = int(code)
     frags = geom.get_fragments()
-    if code == 4107:
-        frags[1].join(frags[2])
-    elif code == 4109:
-        frags[0].join(frags[1])
-        frags[1] = frags[2]
-    elif code == 4110:
-        frags[1].join(frags[2])
+    if code == 4109:
+        frags[0].join(frags.pop(1))
     elif code == 4112:
-        frags[0].join(frags[1])
-        frags[1] = frags[2].joined(frags[3])
-    frags = frags[:2]
-    if not (len(frags) == 2 and geomlib.concat(frags) == geom):
+        frags[0].join(frags.pop(1))
+        frags[1].join(frags.pop(2))
+    if geomlib.concat(frags) != geom:
         print(
             'error: {} ({}) was not fragmented correctly'.format(label, code),
             file=sys.stderr

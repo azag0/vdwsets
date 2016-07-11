@@ -1,4 +1,4 @@
-DIRS := s22 s66x8 l7 s12l
+DIRS := s22 s66x8 l7 s12l x40x10 supra8
 
 .PHONY: $(DIRS)
 

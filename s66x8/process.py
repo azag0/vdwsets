@@ -2,7 +2,7 @@
 import sys
 from pathlib import Path
 sys.path.append('..')
-import geomlib
+from caflib.Tools import geomlib
 import json
 
 
@@ -15,12 +15,15 @@ for path in paths:
     geom = geomlib.readfile(path)
     label = path.stem.split('_')[1]
     idx, label, scale = int(label[0:2]), label[2:-3], float(label[-3:])/100
-    frags = geom.get_fragments()
-    if not (len(frags) == 2 and geomlib.concat(frags) == geom):
-        print(
-            'error: {} ({}) was not fragmented correctly'.format(label, scale),
-            file=sys.stderr
-        )
+    if scale == 1.0:
+        frags = geom.get_fragments()
+        if not (len(frags) == 2 and geomlib.concat(frags) == geom):
+            print(
+                'error: {} ({}) was not fragmented correctly'.format(label, scale),
+                file=sys.stderr
+            )
+    else:
+        frags = []
     geoms.append({'label': label,
                   'idx': idx,
                   'scale': scale,
@@ -30,7 +33,7 @@ for path in paths:
 json.dump(energies, sys.stdout)
 
 for row in geoms:
-    idx = '{}-{}'.format(row['idx'], row['scale'])
+    idx = '{:02}-{:.2f}'.format(row['idx'], row['scale'])
     row['complex'].write(prefix/'{}-complex-0.xyz'.format(idx))
     for i, fragment in enumerate(row['fragments']):
         fragment.write(prefix/'{}-monomer-{}.xyz'.format(idx, i+1))

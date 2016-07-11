@@ -27,7 +27,7 @@ with open('res/potentials.json') as f:
 energies = []
 for specie, potential in potentials.items():
     Molecule([Atom(specie, (0, 0, 0))]).write(
-        'geoms/{}-0-atom.xyz'.format(specie.lower())
+        'geoms/{}--atom.xyz'.format(specie.lower())
     )
     for distance in distances:
         ene = eval_potential(distance/bohr, **potential)
