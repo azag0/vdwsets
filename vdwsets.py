@@ -129,7 +129,7 @@ def get_x23(limit=inf):
     with (root/'x23/energies.csv').open() as f:
         lines = [l.strip().split(';') for l in f]
     refs = {line[0]: float(line[2]) for line in lines[1:]}
-    for i, path in enumerate((root/'x23/geoms').glob('*_g.xyz')):
+    for i, path in enumerate(sorted((root/'x23/geoms').glob('*_g.xyz'))):
         if i >= limit:
             continue
         name = path.stem.split('_')[0]
