@@ -23,6 +23,10 @@ for path in paths:
     frags = geom.get_fragments()
     if code == 4109:
         frags[0].join(frags.pop(1))
+    elif code == 4110:
+        frags[1].join(frags.pop(2))
+    elif code == 4107:
+        frags[1].join(frags.pop(2))
     elif code == 4112:
         frags[0].join(frags.pop(1))
         frags[1].join(frags.pop(2))

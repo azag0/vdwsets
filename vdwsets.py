@@ -8,6 +8,7 @@ from math import exp
 
 root = Path(__file__).parent
 kcal = 627.509
+kjmol = 2625.5
 
 
 def get_s22():
@@ -15,7 +16,10 @@ def get_s22():
     with (root/'s22/energies.json').open() as f:
         enes = json.load(f)
     for idx, row in enumerate(enes):
-        cluster = Cluster()
+        cluster = Cluster(
+            energies={'ref': float(row['CCSD(T) /CBS CP'])},
+            intene=lambda x: x['complex']-x['fragment-1']-x['fragment-2']
+        )
         for i, name in enumerate(['complex'] + 2*['monomer']):
             filename = '{:02}-{}-{}.xyz'.format(idx+1, name, i)
             geom = geomlib.readfile(root/'s22/geoms'/filename)
@@ -35,7 +39,10 @@ def get_s66x8():
     with (root/'s66x8/energies.json').open() as f:
         enes = json.load(f)
     for row in enes:
-        cluster = Cluster()
+        cluster = Cluster(
+            energies={'ref': float(row['CCSD(T) /CBS CP'])},
+            intene=lambda x: x['complex']-x['fragment-1']-x['fragment-2']
+        )
         m = re.match(r'(?P<idx>\d+) (?P<label>.*) \((?P<dist>[\d.]+)\)', row['system name'])
         idx, label, dist = int(m.group('idx')), m.group('label'), float(m.group('dist'))
         for i, name in enumerate(['complex'] + 2*['monomer']):
@@ -59,7 +66,10 @@ def get_x40x10():
     with (root/'x40x10/energies.json').open() as f:
         enes = json.load(f)
     for row in enes:
-        cluster = Cluster()
+        cluster = Cluster(
+            energies={'ref': float(row['CCSD(T) /CBS CP'])},
+            intene=lambda x: x['complex']-x['fragment-1']-x['fragment-2']
+        )
         m = re.match(r'(?P<idx>\d+) (?P<label>.*) (?P<dist>[\d.]+)', row['system name'])
         idx, label, dist = int(m.group('idx')), m.group('label'), float(m.group('dist'))
         for i, name in enumerate(['complex'] + 2*['monomer']):
@@ -80,9 +90,18 @@ def get_x40x10():
 
 def get_s12l():
     ds = Dataset('S12L')
+    with (root/'s12l/energies.csv').open() as f:
+        lines = [l.strip().split(';') for l in f]
+    refs = {line[0]: {
+        refname: float(ene) if ene else None for refname, ene
+        in zip(lines[0][1:], line[1:])
+    } for line in lines[1:]}
     for idx in range(2, 8):
         for subidx in 'ab':
-            cluster = Cluster()
+            cluster = Cluster(
+                energies=refs[str(idx) + subidx],
+                intene=lambda x: x['complex']-x['host']-x['guest']
+            )
             for fragment in ['host', 'complex', 'monomer']:
                 filename = '{}-{}-{}.xyz'.format(
                     idx, fragment, subidx if fragment != 'host' else ''
@@ -99,9 +118,12 @@ def get_s12l():
 
 def get_x23():
     ds = Dataset('X23')
+    with (root/'x23/energies.csv').open() as f:
+        lines = [l.strip().split(';') for l in f]
+    refs = {line[0]: float(line[2]) for line in lines[1:]}
     for path in (root/'x23/geoms').glob('*_g.xyz'):
         name = path.stem.split('_')[0]
-        cluster = Cluster()
+        cluster = Cluster(energies={'ref': refs[name]/kjmol*kcal})
         for fragment, geom in [
                 ('molecule', Molecule(geomlib.readfile(path, 'xyzc').atoms)),
                 ('crystal', geomlib.readfile(str(path).replace('_g', ''), 'xyzc'))
@@ -109,6 +131,8 @@ def get_x23():
             geomid = geom.hash()
             ds.geoms[geomid] = geom
             cluster[fragment] = geomid
+        n = len(ds.geoms[cluster.fragments['crystal']])//len(ds.geoms[cluster.fragments['molecule']])
+        cluster._intene = lambda x, n=n: x['crystal']/n-x['molecule']
         ds[(name,)] = cluster
     return ds
 
@@ -118,8 +142,12 @@ def get_l7():
     with (root/'l7/energies.json').open() as f:
         enes = json.load(f)
     for idx, row in enumerate(enes):
-        cluster = Cluster()
-        for path in (root/'l7/geoms').glob('{}-*.xyz'.format(idx+1)):
+        components = sorted((root/'l7/geoms').glob('{}-*.xyz'.format(idx+1)))
+        cluster = Cluster(
+            energies={'ref': float(row['QCISD(T) /CBS CP'] or row['CCSD(T) /CBS CP'])},
+            intene=lambda x, n=len(components)-1: x['complex']-sum(x['fragment-' + str(i+1)] for i in range(n))
+        )
+        for path in components:
             geom = geomlib.readfile(path)
             idx, fragment, i = path.stem.split('-')
             geomid = geom.hash()
@@ -153,9 +181,12 @@ def get_rare_gas():
         geomid_atom = atom.hash()
         ds.geoms[geomid_atom] = atom
         for distance in distances:
-            cluster = Cluster()
+            ene = eval_potential(distance/bohr, **potential)*kcal
+            cluster = Cluster(
+                energies={'ref': ene},
+                intene=lambda x: x['dimer']-2*x['atom']
+            )
             cluster['atom'] = geomid_atom
-            ene = eval_potential(distance/bohr, **potential)
             energies.append((specie, distance, kcal*ene))
             dimer = Molecule([Atom(specie, (0, 0, 0)), Atom(specie, (distance, 0, 0))])
             geomid = dimer.hash()
@@ -165,17 +196,19 @@ def get_rare_gas():
     return ds
 
 
-def get_all_datasets():
+def get_all_datasets(include=[], exclude=[]):
     all_ds = {}
     for get_ds in [
             get_s22, get_s66x8, get_x40x10, get_s12l, get_x23, get_l7,
             get_rare_gas
     ]:
         ds = get_ds()
+        if ds.name in exclude or (include and ds.name not in include):
+            continue
         all_ds[ds.name] = ds
     return all_ds
 
 
 if __name__ == '__main__':
     geomlib.settings['eq_precision'] = 3
-    print(get_rare_gas())
+    print(get_all_datasets())
