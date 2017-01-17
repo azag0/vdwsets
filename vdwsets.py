@@ -4,18 +4,20 @@ from caflib.Tools.geomlib import Atom, Molecule, bohr
 from pathlib import Path
 import json
 import re
-from math import exp
+from math import exp, inf
 
 root = Path(__file__).parent
 kcal = 627.509
 kjmol = 2625.5
 
 
-def get_s22():
+def get_s22(limit=inf):
     ds = Dataset('S22')
     with (root/'s22/energies.json').open() as f:
         enes = json.load(f)
     for idx, row in enumerate(enes):
+        if idx >= limit:
+            continue
         cluster = Cluster(
             energies={'ref': float(row['CCSD(T) /CBS CP'])},
             intene=lambda x: x['complex']-x['fragment-1']-x['fragment-2']
@@ -34,7 +36,7 @@ def get_s22():
     return ds
 
 
-def get_s66x8():
+def get_s66x8(limit=inf):
     ds = Dataset('S66x8')
     with (root/'s66x8/energies.json').open() as f:
         enes = json.load(f)
@@ -45,6 +47,8 @@ def get_s66x8():
         )
         m = re.match(r'(?P<idx>\d+) (?P<label>.*) \((?P<dist>[\d.]+)\)', row['system name'])
         idx, label, dist = int(m.group('idx')), m.group('label'), float(m.group('dist'))
+        if idx > limit:
+            continue
         for i, name in enumerate(['complex'] + 2*['monomer']):
             filename = '{:02}-{:.2f}-{}-{}.xyz'.format(
                 idx, dist if name == 'complex' else 1.0, name, i
@@ -61,7 +65,7 @@ def get_s66x8():
     return ds
 
 
-def get_x40x10():
+def get_x40x10(limit=inf):
     ds = Dataset('X40x10')
     with (root/'x40x10/energies.json').open() as f:
         enes = json.load(f)
@@ -72,6 +76,8 @@ def get_x40x10():
         )
         m = re.match(r'(?P<idx>\d+) (?P<label>.*) (?P<dist>[\d.]+)', row['system name'])
         idx, label, dist = int(m.group('idx')), m.group('label'), float(m.group('dist'))
+        if idx > limit:
+            continue
         for i, name in enumerate(['complex'] + 2*['monomer']):
             filename = '{:02}-{:.2f}-{}-{}.xyz'.format(
                 idx, dist if name == 'complex' else 1.0, name, i
@@ -88,7 +94,7 @@ def get_x40x10():
     return ds
 
 
-def get_s12l():
+def get_s12l(limit=inf):
     ds = Dataset('S12L')
     with (root/'s12l/energies.csv').open() as f:
         lines = [l.strip().split(';') for l in f]
@@ -97,6 +103,8 @@ def get_s12l():
         in zip(lines[0][1:], line[1:])
     } for line in lines[1:]}
     for idx in range(2, 8):
+        if idx-1 > limit:
+            continue
         for subidx in 'ab':
             cluster = Cluster(
                 energies=refs[str(idx) + subidx],
@@ -116,12 +124,14 @@ def get_s12l():
     return ds
 
 
-def get_x23():
+def get_x23(limit=inf):
     ds = Dataset('X23')
     with (root/'x23/energies.csv').open() as f:
         lines = [l.strip().split(';') for l in f]
     refs = {line[0]: float(line[2]) for line in lines[1:]}
-    for path in (root/'x23/geoms').glob('*_g.xyz'):
+    for i, path in enumerate((root/'x23/geoms').glob('*_g.xyz')):
+        if i >= limit:
+            continue
         name = path.stem.split('_')[0]
         cluster = Cluster(energies={'ref': refs[name]/kjmol*kcal})
         for fragment, geom in [
@@ -137,11 +147,13 @@ def get_x23():
     return ds
 
 
-def get_l7():
+def get_l7(limit=inf):
     ds = Dataset('L7')
     with (root/'l7/energies.json').open() as f:
         enes = json.load(f)
     for idx, row in enumerate(enes):
+        if idx >= limit:
+            continue
         components = sorted((root/'l7/geoms').glob('{}-*.xyz'.format(idx+1)))
         cluster = Cluster(
             energies={'ref': float(row['QCISD(T) /CBS CP'] or row['CCSD(T) /CBS CP'])},
@@ -159,7 +171,7 @@ def get_l7():
     return ds
 
 
-def get_rare_gas():
+def get_rare_gas(limit=inf):
     def eval_potential(R, D, Rmin, A, C6, C8, C10, alpha, beta, **kwargs):
         DRmin = D*Rmin
         Fx = exp(-(DRmin/R-1)**2) if R < DRmin else 1
@@ -180,7 +192,9 @@ def get_rare_gas():
         atom = Molecule([Atom(specie, (0, 0, 0))])
         geomid_atom = atom.hash()
         ds.geoms[geomid_atom] = atom
-        for distance in distances:
+        for i, distance in enumerate(distances):
+            if i >= limit:
+                continue
             ene = eval_potential(distance/bohr, **potential)*kcal
             cluster = Cluster(
                 energies={'ref': ene},
@@ -196,13 +210,13 @@ def get_rare_gas():
     return ds
 
 
-def get_all_datasets(include=[], exclude=[]):
+def get_all_datasets(include=[], exclude=[], limit=inf):
     all_ds = {}
     for get_ds in [
             get_s22, get_s66x8, get_x40x10, get_s12l, get_x23, get_l7,
             get_rare_gas
     ]:
-        ds = get_ds()
+        ds = get_ds(limit=limit)
         if ds.name in exclude or (include and ds.name not in include):
             continue
         all_ds[ds.name] = ds
