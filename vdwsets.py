@@ -1,6 +1,7 @@
 from caflib.Tools.dataset import Dataset, Cluster
 from caflib.Tools import geomlib
 from caflib.Tools.geomlib import Atom, Molecule, bohr
+from csv import DictReader
 from pathlib import Path
 import json
 import re
@@ -62,6 +63,40 @@ def get_s66x8(limit=inf):
                 fragment = 'fragment-{}'.format(i)
             cluster[fragment] = geomid
         ds[(label, dist)] = cluster
+    return ds
+
+
+def get_3b_69():
+    ds = Dataset('3B-69')
+    with (root/'3b-69/energies.csv').open() as f:
+        for row in DictReader(f, delimiter=';'):
+            number, system, variant = int(row['number']), row['system'], row['variant']
+            if (number, variant) in [(12, 'c'), (19, 'a')]:
+                continue
+            cluster = Cluster(
+                energies={'ref': float(row['CCSD(T)/CBS'])},
+                intene=lambda x: x['ABC']-x['AB']-x['BC']-x['AC']+x['A']+x['B']+x['C']
+            )
+            systempath = system.replace(' ', '_').replace('/', '_')
+            path = root/'3b-69/geoms'/f'{number:02}{variant}_{systempath}.xyz'
+            print(path)
+            cmplx = geomlib.readfile(path)
+            frags = cmplx.get_fragments()
+            assert len(frags) == 3 and geomlib.concat(frags) == cmplx
+            geoms = {
+                'ABC': cmplx,
+                'AB': frags[0]+frags[1],
+                'BC': frags[1]+frags[2],
+                'AC': frags[0]+frags[2],
+                'A': frags[0],
+                'B': frags[1],
+                'C': frags[2]
+            }
+            for fragname, geom in geoms.items():
+                geomid = geom.hash()
+                ds.geoms[geomid] = geom
+                cluster[fragname] = geomid
+            ds[(f'{system}[{variant}]',)] = cluster
     return ds
 
 
@@ -214,7 +249,7 @@ def get_all_datasets(include=[], exclude=[], limit=inf):
     all_ds = {}
     for get_ds in [
             get_s22, get_s66x8, get_x40x10, get_s12l, get_x23, get_l7,
-            get_rare_gas
+            get_rare_gas, get_3b_69
     ]:
         ds = get_ds(limit=limit)
         if ds.name in exclude or (include and ds.name not in include):
