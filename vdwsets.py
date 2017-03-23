@@ -66,11 +66,13 @@ def get_s66x8(limit=inf):
     return ds
 
 
-def get_3b_69():
+def get_3b_69(limit=inf):
     ds = Dataset('3B-69')
     with (root/'3b-69/energies.csv').open() as f:
         for row in DictReader(f, delimiter=';'):
             number, system, variant = int(row['number']), row['system'], row['variant']
+            if number > inf:
+                continue
             if (number, variant) in [(12, 'c'), (19, 'a')]:
                 continue
             cluster = Cluster(
@@ -79,7 +81,6 @@ def get_3b_69():
             )
             systempath = system.replace(' ', '_').replace('/', '_')
             path = root/'3b-69/geoms'/f'{number:02}{variant}_{systempath}.xyz'
-            print(path)
             cmplx = geomlib.readfile(path)
             frags = cmplx.get_fragments()
             assert len(frags) == 3 and geomlib.concat(frags) == cmplx
@@ -96,7 +97,7 @@ def get_3b_69():
                 geomid = geom.hash()
                 ds.geoms[geomid] = geom
                 cluster[fragname] = geomid
-            ds[(f'{system}[{variant}]',)] = cluster
+            ds[(f'{system}@{variant}',)] = cluster
     return ds
 
 
