@@ -1,4 +1,4 @@
-DATASETS = s22
+DATASETS = s22 s66x8
 BLDDIR = build
 DATADIR = data
 UTILDIR = utils

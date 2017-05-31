@@ -1,31 +1,31 @@
+ID = 26
+
 all: build
 
-build: energies.json
+install: build
+	mkdir -p $(DATADIR)
+	cp -r energies.csv geoms $(DATADIR)
 
-energies.json: process.py | res/structures.zip res/energies.csv
+build: energies.csv
+
+energies.csv: process.py clean-csv.py | res/structures.zip res/energies.csv
 	$(eval TMPDIR != mktemp -d)
 	tar -C $(TMPDIR) -xf res/structures.zip
 	for f in $(TMPDIR)/*.xyz; do sed -i "" '/[^[:space:]]/,$$!d' $$f; done
 	mkdir -p geoms
-	../csv2json.py <res/energies.csv | ./$^ geoms $(TMPDIR)/*.xyz >$@
+	$(word 2,$^) <res/energies.csv | $< geoms $(TMPDIR)/*.xyz >$(TMPDIR)/$@
+	mv $(TMPDIR)/$@ .
 	rm -r $(TMPDIR)
 
-download: $(addprefix src/,${sources})
-
 res/structures.zip:
-	wget -O $@ http://www.begdb.com/moldown.php?id=26
+	mkdir -p $(@D)
+	wget -O $@ http://www.begdb.com/moldown.php?id=$(ID)
 
 res/energies.csv:
-	$(error $@ needs to be downloaded manually at http://www.begdb.com/index.php?action=oneDataset&id=26&state=show)
-
-res:
-	mkdir $@
+	$(error $@ needs to be downloaded manually at http://www.begdb.com/index.php?action=oneDataset&id=$(ID)&state=show)
 
 clean:
-	rm -rf geoms energies.json
+	rm -rf geoms energies.csv
 
 distclean: clean
-	rm -f res/structures.zip
-
-web:
-	open http://dx.doi.org/10.1021/ct2002946
+	rm -rf res
