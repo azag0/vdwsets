@@ -1,18 +1,22 @@
-DIRS := s22 s66x8 l7 s12l x40x10 supra8
+DATASETS = s22
+BLDDIR = build
+DATADIR = data
+UTILDIR = utils
 
-.PHONY: $(DIRS)
+all: $(DATASETS)
 
-all: $(DIRS)
+$(DATASETS): | $(BLDDIR)/geomlib.py
+	mkdir -p $(BLDDIR)/$@
+	cp $(UTILDIR)/$@/Makefile $(BLDDIR)/$@
+	$(MAKE) -C $(BLDDIR)/$@
 
-$(DIRS): | geomlib.py
-	@$(MAKE) -C $@
-
-geomlib.py:
-	wget https://raw.githubusercontent.com/azag0/caf/79527a6e6247d0bd96790fc72e7ebc2891bd20a7/caflib/Tools/$@
+$(BLDDIR)/geomlib.py:
+	mkdir -p $(@D)
+	wget -O $@ https://raw.githubusercontent.com/azag0/caf/a8f7af756c39675156b3754834cd6082ab9159a4/caflib/Tools/$(@F)
 
 clean:
-	for d in $(DIRS); do $(MAKE) -C $$d clean; done
+	@for d in $(DIRS); do $(MAKE) -C $$d clean; done
 
 distclean:
-	for d in $(DIRS); do $(MAKE) -C $$d distclean; done
+	@for d in $(DIRS); do $(MAKE) -C $$d distclean; done
 	rm -f geomlib.py

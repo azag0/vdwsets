@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 import sys
 from pathlib import Path
-sys.path.append('..')
 import geomlib
 import json
 from difflib import SequenceMatcher
@@ -23,13 +22,14 @@ for path in paths:
     frags = geom.get_fragments()
     if not (len(frags) == 2 and geomlib.concat(frags) == geom):
         print(
-            'error: {} ({}) was not fragmented correctly'.format(label, code),
-            file=sys.stderr
+            f'error: {label} ({code}) was not fragmented correctly',
         )
-    geoms.append({'label': label,
-                  'code': code,
-                  'complex': geom,
-                  'fragments': frags})
+    geoms.append({
+        'label': label,
+        'code': code,
+        'complex': geom,
+        'fragments': frags
+    })
 
 geoms.sort(key=lambda x: x['code'])
 geom_labels = [g['label'] for g in geoms]
