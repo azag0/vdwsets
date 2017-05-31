@@ -1,6 +1,6 @@
 DATASETS = s22 s66x8
 BLDDIR = build
-DATADIR = data
+DATADIR = vdwsets/data
 UTILDIR = utils
 
 all: $(DATASETS)
