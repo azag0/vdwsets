@@ -26,6 +26,9 @@ def get_s22(limit=inf):
         for i, name in enumerate(['complex'] + 2*['monomer']):
             filename = '{:02}-{}-{}.xyz'.format(idx+1, name, i)
             geom = geomlib.readfile(root/'s22/geoms'/filename)
+            if geom.metadata.get('comment') == '':
+                geom.metadata['comment'] = None
+            geom['comment'] = f'Formula: {geom!r}'
             geomid = geom.hash()
             ds.geoms[geomid] = geom
             if name == 'complex':
@@ -55,6 +58,8 @@ def get_s66x8(limit=inf):
                 idx, dist if name == 'complex' else 1.0, name, i
             )
             geom = geomlib.readfile(root/'s66x8/geoms'/filename)
+            if geom.metadata.get('comment') == '':
+                geom.metadata['comment'] = None
             geomid = geom.hash()
             ds.geoms[geomid] = geom
             if name == 'complex':
@@ -119,6 +124,8 @@ def get_x40x10(limit=inf):
                 idx, dist if name == 'complex' else 1.0, name, i
             )
             geom = geomlib.readfile(root/'x40x10/geoms'/filename)
+            if geom.metadata.get('comment') == '':
+                geom.metadata['comment'] = None
             geomid = geom.hash()
             ds.geoms[geomid] = geom
             if name == 'complex':

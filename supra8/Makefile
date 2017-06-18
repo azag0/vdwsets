@@ -5,7 +5,7 @@ build: geoms
 geoms: process.ipynb | res/suppl-info.json
 	rm -rf $@
 	mkdir $@
-	jupyeval $^
+	jupyter nbconvert $^ --log-level=WARN --to=script --stdout | python3
 
 %.json: %.pdf
 	pdf2json -i -enc UTF-8 -f 2 $^ $@
