@@ -8,7 +8,7 @@ $(DIRS): | geomlib.py
 	@$(MAKE) -C $@
 
 geomlib.py:
-	wget https://raw.githubusercontent.com/azag0/caf/79527a6e6247d0bd96790fc72e7ebc2891bd20a7/caflib/Tools/$@
+	wget https://raw.githubusercontent.com/azag0/caf/5f9ca6f8c3a430da351584d4756a0509c87276cf/caflib/Tools/$@
 
 clean:
 	for d in $(DIRS); do $(MAKE) -C $$d clean; done

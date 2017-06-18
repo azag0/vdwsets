@@ -2,7 +2,7 @@
 import sys
 from pathlib import Path
 sys.path.append('..')
-from caflib.Tools import geomlib
+import geomlib
 import json
 from difflib import SequenceMatcher
 

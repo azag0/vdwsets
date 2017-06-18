@@ -13,10 +13,10 @@ energies.json: process.py | res/structures.zip res/energies.csv
 download: $(addprefix src/,${sources})
 
 res/structures.zip:
-	wget -O $@ http://www.begdb.com/moldown.php?id=26
+	wget -O $@ http://www.begdb.com/moldown.php?id=32
 
 res/energies.csv:
-	$(error $@ needs to be downloaded manually at http://www.begdb.com/index.php?action=oneDataset&id=26&state=show)
+	$(error $@ needs to be downloaded manually at http://www.begdb.com/index.php?action=oneDataset&id=32&state=show)
 
 res:
 	mkdir $@
