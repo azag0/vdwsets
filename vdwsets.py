@@ -6,10 +6,34 @@ from pathlib import Path
 import json
 import re
 from math import exp, inf
+import numpy as np
 
 root = Path(__file__).parent
 kcal = 627.509
 kjmol = 2625.5
+
+
+def intene_cp(x):
+    ene_int = x['complex']-x['fragment-1']-x['fragment-2']
+    try:
+        ene_int_cp = x['complex']-x['fragment-1-cp']-x['fragment-2-cp']
+    except KeyError:
+        return ene_int
+    return ene_int, ene_int_cp
+
+
+def get_cp_frags(geom):
+    frags = geom.get_fragments()
+    frags_empty = [frag.copy() for frag in frags]
+    for frag in frags_empty:
+        for atom in frag:
+            atom.flags['dummy'] = True
+            atom.prop = atom.prop.copy()
+            atom.prop['mass'] *= 0.1
+    frags_cp = (frags[0] + frags_empty[1], frags[1] + frags_empty[0])
+    for frag in frags_cp:
+        frag.metadata['cp'] = True
+    return frags_cp
 
 
 def get_s22(limit=inf):
@@ -21,20 +45,25 @@ def get_s22(limit=inf):
             continue
         cluster = Cluster(
             energies={'ref': float(row['CCSD(T) /CBS CP'])},
-            intene=lambda x: x['complex']-x['fragment-1']-x['fragment-2']
+            intene=intene_cp
         )
-        for i, name in enumerate(['complex'] + 2*['monomer']):
+        geoms = {}
+        geom_names = [
+            ('complex', 0, 'complex'),
+            ('monomer', 1, 'fragment-1'),
+            ('monomer', 2, 'fragment-2'),
+        ]
+        for name, i, fragment in geom_names:
             filename = '{:02}-{}-{}.xyz'.format(idx+1, name, i)
             geom = geomlib.readfile(root/'s22/geoms'/filename)
             if geom.metadata.get('comment') == '':
                 geom.metadata['comment'] = None
             geom['comment'] = f'Formula: {geom!r}'
+            geoms[fragment] = geom
+        geoms['fragment-1-cp'], geoms['fragment-2-cp'] = get_cp_frags(geoms['complex'])
+        for fragment, geom in geoms.items():
             geomid = geom.hash()
             ds.geoms[geomid] = geom
-            if name == 'complex':
-                fragment = name
-            else:
-                fragment = 'fragment-{}'.format(i)
             cluster[fragment] = geomid
         ds[(row['system name'],)] = cluster
     return ds
@@ -47,25 +76,28 @@ def get_s66x8(limit=inf):
     for row in enes:
         cluster = Cluster(
             energies={'ref': float(row['CCSD(T) /CBS CP'])},
-            intene=lambda x: x['complex']-x['fragment-1']-x['fragment-2']
+            intene=intene_cp
         )
         m = re.match(r'(?P<idx>\d+) (?P<label>.*) \((?P<dist>[\d.]+)\)', row['system name'])
         idx, label, dist = int(m.group('idx')), m.group('label'), float(m.group('dist'))
         if idx > limit:
             continue
-        for i, name in enumerate(['complex'] + 2*['monomer']):
-            filename = '{:02}-{:.2f}-{}-{}.xyz'.format(
-                idx, dist if name == 'complex' else 1.0, name, i
-            )
+        geoms = {}
+        geom_names = [
+            (dist, 'complex', 0, 'complex'),
+            (1.0, 'monomer', 1, 'fragment-1'),
+            (1.0, 'monomer', 2, 'fragment-2'),
+        ]
+        for dist_real, name, i, fragment in geom_names:
+            filename = '{:02}-{:.2f}-{}-{}.xyz'.format(idx, dist_real, name, i)
             geom = geomlib.readfile(root/'s66x8/geoms'/filename)
             if geom.metadata.get('comment') == '':
                 geom.metadata['comment'] = None
+            geoms[fragment] = geom
+        geoms['fragment-1-cp'], geoms['fragment-2-cp'] = get_cp_frags(geoms['complex'])
+        for fragment, geom in geoms.items():
             geomid = geom.hash()
             ds.geoms[geomid] = geom
-            if name == 'complex':
-                fragment = name
-            else:
-                fragment = 'fragment-{}'.format(i)
             cluster[fragment] = geomid
         ds[(label, dist)] = cluster
     return ds
@@ -138,6 +170,18 @@ def get_x40x10(limit=inf):
 
 
 def get_s12l(limit=inf):
+    def intene_cp(x):
+        ene_int = x['complex']-x['host']-x['guest']
+        try:
+            ene_int_cp = (
+                x['complex']-x['host']-x['guest'] +
+                (-x['fragment-1-cp']-x['fragment-2-cp']) +
+                x['fragment-1-nocp']+x['fragment-2-nocp']
+            )
+        except KeyError:
+            return ene_int
+        return ene_int, ene_int_cp
+
     ds = Dataset('S12L')
     with (root/'s12l/energies.csv').open() as f:
         lines = [l.strip().split(';') for l in f]
@@ -151,13 +195,20 @@ def get_s12l(limit=inf):
         for subidx in 'ab':
             cluster = Cluster(
                 energies=refs[str(idx) + subidx],
-                intene=lambda x: x['complex']-x['host']-x['guest']
+                intene=intene_cp
             )
+            geoms = {}
             for fragment in ['host', 'complex', 'monomer']:
                 filename = '{}-{}-{}.xyz'.format(
                     idx, fragment, subidx if fragment != 'host' else ''
                 )
                 geom = geomlib.readfile(root/'s12l/geoms'/filename)
+                geoms[fragment] = geom
+            geoms['fragment-1-nocp'], geoms['fragment-2-nocp'] = geoms['complex'].get_fragments()
+            geoms['fragment-1-nocp'].metadata['cp'] = True
+            geoms['fragment-2-nocp'].metadata['cp'] = True
+            geoms['fragment-1-cp'], geoms['fragment-2-cp'] = get_cp_frags(geoms['complex'])
+            for fragment, geom in geoms.items():
                 geomid = geom.hash()
                 ds.geoms[geomid] = geom
                 if fragment == 'monomer':
@@ -165,6 +216,19 @@ def get_s12l(limit=inf):
                 cluster[fragment] = geomid
             ds[(str(idx) + subidx,)] = cluster
     return ds
+
+
+def get_sc_frags(crystal, cutoff=6):
+    sc = crystal.complete_molecules().supercell((3, 3, 3))
+    base = geomlib.Molecule([a for a in sc.atoms if a.flags['cell'] == (1, 1, 1)])
+    frags = base.get_fragments()
+    cp_shells = []
+    for frag in frags:
+        dists = np.sqrt(np.sum((frag.xyz[:, None]-sc.xyz[None, :])**2, 2)).min(0)
+        cp_shells.append(geomlib.Molecule(
+            [sc.atoms[i] for i in np.flatnonzero((0 < dists) & (dists < cutoff))]
+        ))
+    return frags, cp_shells
 
 
 def get_x23(limit=inf):
@@ -177,15 +241,39 @@ def get_x23(limit=inf):
             continue
         name = path.stem.split('_')[0]
         cluster = Cluster(energies={'ref': refs[name]/kjmol*kcal})
-        for fragment, geom in [
-                ('molecule', Molecule(geomlib.readfile(path, 'xyzc').atoms)),
-                ('crystal', geomlib.readfile(str(path).replace('_g', ''), 'xyzc'))
-        ]:
+        geoms = {
+            'molecule': Molecule(geomlib.readfile(path, 'xyzc').atoms),
+            'crystal': geomlib.readfile(str(path).replace('_g', ''), 'xyzc'),
+        }
+        for i, (frag, cp_shell) in enumerate(zip(*get_sc_frags(geoms['crystal']))):
+            i += 1
+            frag.metadata['cp'] = True
+            geoms[f'fragment-{i}-nocp'] = frag
+            for atom in cp_shell:
+                atom.flags['dummy'] = True
+                atom.prop = atom.prop.copy()
+                atom.prop['mass'] *= 0.1
+            frag_cp = frag + cp_shell
+            frag_cp.metadata['cp'] = True
+            geoms[f'fragment-{i}-cp'] = frag_cp
+        for fragment, geom in geoms.items():
             geomid = geom.hash()
             ds.geoms[geomid] = geom
             cluster[fragment] = geomid
-        n = len(ds.geoms[cluster.fragments['crystal']])//len(ds.geoms[cluster.fragments['molecule']])
-        cluster._intene = lambda x, n=n: x['crystal']/n-x['molecule']
+        n = len(geoms['crystal'])//len(geoms['molecule'])
+
+        def intene_cp(x, n=n):
+            ene_int = x['crystal']/n-x['molecule']
+            try:
+                ene_int_cp = (
+                    x['crystal']-n*x['molecule'] +
+                    sum(-x[f'fragment-{i+1}-cp']+x[f'fragment-{i+1}-nocp'] for i in range(n))
+                )/n
+            except KeyError:
+                return ene_int
+            return ene_int, ene_int_cp
+
+        cluster._intene = intene_cp
         ds[(name,)] = cluster
     return ds
 
