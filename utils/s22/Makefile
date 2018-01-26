@@ -9,7 +9,7 @@ install: build
 build: energies.csv
 
 energies.csv: process.py clean-csv.py | res/structures.zip res/energies.csv
-	$(eval TMPDIR != mktemp -d)
+	$(eval TMPDIR := $(shell mktemp -d))
 	tar -C $(TMPDIR) -xf res/structures.zip
 	for f in $(TMPDIR)/*.xyz; do sed -i "" '/[^[:space:]]/,$$!d' $$f; done
 	mkdir -p geoms
