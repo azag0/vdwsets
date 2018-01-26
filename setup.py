@@ -6,7 +6,7 @@ setup(
     version='0.1',
     description='van der Waals datasets',
     author='Jan Hermann',
-    author_email='dev@hermann.in',
+    author_email='dev@janhermann.cz',
     url='https://github.com/azag0/vdwsets',
     packages=['vdwsets'],
     package_data={'vdwsets': ['data/*/energies.csv', 'data/*/geoms/*.xyz']},
