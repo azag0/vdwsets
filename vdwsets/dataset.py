@@ -1,43 +1,25 @@
 # This Source Code Form is subject to the terms of the Mozilla Public
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
-from itertools import chain
 
 
 class Dataset:
     def __init__(self, name):
         self.name = name
         self.clusters = {}
-
-    @property
-    def geoms(self):
-        return set(chain.from_iterable(c.fragments.values() for c in self.clusters.values()))
+        self._geoms = None
 
     def __repr__(self):
-        return (
-            f'<Dataset {self.name!r} containing '
-            f'{len(self.clusters)} clusters and {len(self.geoms)} structures>'
-        )
-
-    def get_task(self, ctx, taskgen):
-        tasks = {
-            geomid: taskgen(ctx, geom, self.name)
-            for geomid, geom in self.geoms.items()
-        }
-        tasktree = [(
-            key,
-            [
-                tasks[geomid] + ctx.link(fragment)
-                for fragment, geomid
-                in cluster.fragments.items()
-                if tasks[geomid]
-            ] + ctx()
-        ) for key, cluster in self.clusters.items()]
-        tasktree.sort(key=lambda x: x[0])
-        return [
-            task + ctx.link('_'.join(str(k) for k in key))
-            for key, task in tasktree
-        ] + ctx()
+        if self._geoms is not None:
+            ngeoms = len(self._geoms)
+        else:
+            ngeoms = len(set(
+                path
+                for cluster in self.clusters.values()
+                for path in cluster.fragments.values()
+            ))
+        return f'<Dataset {self.name!r} containing ' \
+            f'{len(self.clusters)} clusters and {ngeoms} structures>'
 
     def __setitem__(self, key, value):
         self.clusters[key] = value
@@ -48,6 +30,27 @@ class Dataset:
             for key, cluster in self.clusters.items()
             if key in energies
         }
+
+    def load_geoms(self):
+        from caflib.Tools import geomlib
+
+        assert self._geoms is None
+        path_geoms = {}
+        self._geoms = {}
+        for cluster in self.clusters.values():
+            for name, path in cluster.fragments.items():
+                geom = path_geoms.get(path)
+                if geom is None:
+                    geom = path_geoms.setdefault(path, geomlib.readfile(path))
+                    geom = self._geoms.setdefault(geom.hash(), geom)
+                cluster.fragments[name] = geom
+
+    def generate_tasks(self, ctx, taskgen):
+        self.load_geoms()
+        for key, cluster in self.clusters.items():
+            for fragment, geom in cluster.fragments.items():
+                with ctx.cd(f'{"_".join(map(str, key))}/{fragment}'):
+                    taskgen(ctx, geom)
 
 
 class Cluster:
