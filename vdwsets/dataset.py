@@ -45,13 +45,6 @@ class Dataset:
                     geom = self._geoms.setdefault(geom.hash(), geom)
                 cluster.fragments[name] = geom
 
-    def generate_tasks(self, ctx, taskgen):
-        self.load_geoms()
-        for key, cluster in self.clusters.items():
-            for fragment, geom in cluster.fragments.items():
-                with ctx.cd(f'{"_".join(map(str, key))}/{fragment}'):
-                    taskgen(ctx, geom)
-
 
 class Cluster:
     def __init__(self, fragments=None, energies=None, intene=None):
