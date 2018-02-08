@@ -22,4 +22,5 @@ setup(
         'Topic :: Scientific/Engineering :: Physics',
     ],
     license='Mozilla Public License 2.0',
+    install_requires=['pandas'],
 )

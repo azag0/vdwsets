@@ -1,9 +1,8 @@
 # This Source Code Form is subject to the terms of the Mozilla Public
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
-import csv
-from math import inf
 from pkg_resources import resource_stream, resource_filename
+import pandas as pd
 
 from .dataset import Dataset, Cluster
 
@@ -11,55 +10,46 @@ kcal = 627.509
 kjmol = 2625.5
 
 
-def get_s22(limit=inf):
-    ds = Dataset('S22')
-    enes = list(csv.DictReader((
-        l.decode() for l in resource_stream(__name__, 'data/s22/energies.csv')
-    ), quoting=csv.QUOTE_NONNUMERIC))
-    for idx, row in enumerate(enes):
-        if idx >= limit:
-            continue
-        cluster = Cluster(
-            energies={'ref': float(row['CCSD(T)/CBS CP'])},
-            intene=lambda x: x['complex']-x['fragment-1']-x['fragment-2']
-        )
-        label = row['system name'].replace(' ', '-').lower()
-        for j, name in enumerate(['complex'] + 2*['fragment']):
-            filename = f'data/s22/geoms/{idx+1:02}_{label}_{name}_{j}.xyz'
+def get_s22():
+    df = pd.read_csv(
+        resource_stream(__name__, 'data/s22/energies.csv'),
+        index_col='label scale'.split()
+    )
+    ds = Dataset('S22', df)
+    for (label, scale), row in df.iterrows():
+        file_lbl = label.replace(' ', '-').lower()
+        fragments = {}
+        for j, fragment in enumerate(['complex'] + 2*['fragment']):
+            filename = 'data/s22/geoms/' \
+                f'{int(row["idx"]):02}_{file_lbl}_{fragment}_{j}.xyz'
             path = resource_filename(__name__, filename)
-            if name == 'complex':
-                fragment = name
-            else:
-                fragment = f'fragment-{j}'
-            cluster[fragment] = path
-        ds[(label,)] = cluster
+            fragments[fragment if fragment == 'complex' else f'fragment-{j}'] = path
+        ds[label, scale] = Cluster(
+            fragments,
+            lambda x: x['complex']-x['fragment-1']-x['fragment-2']
+        )
     return ds
 
 
-def get_s66x8(limit=inf):
-    ds = Dataset('S66x8')
-    enes = list(csv.DictReader((
-        l.decode() for l in resource_stream(__name__, 'data/s66x8/energies.csv')
-    ), quoting=csv.QUOTE_NONNUMERIC))
-    for i, row in enumerate(enes):
-        if i >= limit:
-            continue
-        cluster = Cluster(
-            energies={'ref': float(row['CCSD(T)/CBS CP'])},
-            intene=lambda x: x['complex']-x['fragment-1']-x['fragment-2']
-        )
-        label = row['system name'].replace(' ', '-').lower()
-        for j, name in enumerate(['complex'] + 2*['fragment']):
-            scale = row['scale'] if name == 'complex' else 1.
+def get_s66x8():
+    df = pd.read_csv(
+        resource_stream(__name__, 'data/s66x8/energies.csv'),
+        index_col='label scale'.split()
+    )
+    ds = Dataset('S66', df)
+    for (label, scale), row in df.iterrows():
+        file_lbl = label.replace(' ', '-').lower()
+        fragments = {}
+        for j, fragment in enumerate(['complex'] + 2*['fragment']):
+            scale_lbl = scale if fragment == 'complex' else 1.
             filename = 'data/s66x8/geoms/' \
-                f'{int(row["idx"]):02}-{scale:.2f}_{label}_{name}_{j}.xyz'
+                f'{int(row["idx"]):02}-{scale_lbl:.2f}_{file_lbl}_{fragment}_{j}.xyz'
             path = resource_filename(__name__, filename)
-            if name == 'complex':
-                fragment = name
-            else:
-                fragment = f'fragment-{j}'
-            cluster[fragment] = path
-        ds[(label, row['scale'])] = cluster
+            fragments[fragment if fragment == 'complex' else f'fragment-{j}'] = path
+        ds[label, scale] = Cluster(
+            fragments,
+            lambda x: x['complex']-x['fragment-1']-x['fragment-2']
+        )
     return ds
 
 

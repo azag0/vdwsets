@@ -4,8 +4,9 @@
 
 
 class Dataset:
-    def __init__(self, name):
+    def __init__(self, name, df=None):
         self.name = name
+        self.df = df
         self.clusters = {}
         self._geoms = None
 
@@ -24,13 +25,6 @@ class Dataset:
     def __setitem__(self, key, value):
         self.clusters[key] = value
 
-    def get_int_enes(self, energies, scale=1):
-        return {
-            key: scale*cluster.get_int_ene(energies[key])
-            for key, cluster in self.clusters.items()
-            if key in energies
-        }
-
     def load_geoms(self):
         from caflib.Tools import geomlib
 
@@ -47,9 +41,8 @@ class Dataset:
 
 
 class Cluster:
-    def __init__(self, fragments=None, energies=None, intene=None):
+    def __init__(self, fragments=None, intene=None):
         self.fragments = fragments or {}
-        self.energies = energies or {}
         self._intene = intene
 
     def __repr__(self):

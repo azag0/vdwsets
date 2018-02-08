@@ -1,529 +1,529 @@
-"idx","scale","system name","optimization level","CCSD(T)/CBS CP"
-1,0.9,"Water ... Water","MP2/cc-pVTZ CP",-4.57
-1,0.95,"Water ... Water","MP2/cc-pVTZ CP",-4.88
-1,1.0,"Water ... Water","MP2/cc-pVTZ CP",-4.89
-1,1.05,"Water ... Water","MP2/cc-pVTZ CP",-4.72
-1,1.1,"Water ... Water","MP2/cc-pVTZ CP",-4.45
-1,1.25,"Water ... Water","MP2/cc-pVTZ CP",-3.46
-1,1.5,"Water ... Water","MP2/cc-pVTZ CP",-2.11
-1,2.0,"Water ... Water","MP2/cc-pVTZ CP",-0.87
-2,0.9,"Water ... MeOH","MP2/cc-pVTZ CP",-5.19
-2,0.95,"Water ... MeOH","MP2/cc-pVTZ CP",-5.55
-2,1.0,"Water ... MeOH","MP2/cc-pVTZ CP",-5.57
-2,1.05,"Water ... MeOH","MP2/cc-pVTZ CP",-5.38
-2,1.1,"Water ... MeOH","MP2/cc-pVTZ CP",-5.08
-2,1.25,"Water ... MeOH","MP2/cc-pVTZ CP",-3.94
-2,1.5,"Water ... MeOH","MP2/cc-pVTZ CP",-2.39
-2,2.0,"Water ... MeOH","MP2/cc-pVTZ CP",-0.95
-3,0.9,"Water ... MeNH2","MP2/cc-pVTZ CP",-6.49
-3,0.95,"Water ... MeNH2","MP2/cc-pVTZ CP",-6.87
-3,1.0,"Water ... MeNH2","MP2/cc-pVTZ CP",-6.88
-3,1.05,"Water ... MeNH2","MP2/cc-pVTZ CP",-6.65
-3,1.1,"Water ... MeNH2","MP2/cc-pVTZ CP",-6.28
-3,1.25,"Water ... MeNH2","MP2/cc-pVTZ CP",-4.92
-3,1.5,"Water ... MeNH2","MP2/cc-pVTZ CP",-2.98
-3,2.0,"Water ... MeNH2","MP2/cc-pVTZ CP",-1.14
-4,0.9,"Water ... Peptide","MP2/cc-pVTZ CP",-7.63
-4,0.95,"Water ... Peptide","MP2/cc-pVTZ CP",-8.06
-4,1.0,"Water ... Peptide","MP2/cc-pVTZ CP",-8.08
-4,1.05,"Water ... Peptide","MP2/cc-pVTZ CP",-7.84
-4,1.1,"Water ... Peptide","MP2/cc-pVTZ CP",-7.46
-4,1.25,"Water ... Peptide","MP2/cc-pVTZ CP",-5.99
-4,1.5,"Water ... Peptide","MP2/cc-pVTZ CP",-3.83
-4,2.0,"Water ... Peptide","MP2/cc-pVTZ CP",-1.44
-5,0.9,"MeOH ... MeOH","MP2/cc-pVTZ CP",-5.28
-5,0.95,"MeOH ... MeOH","MP2/cc-pVTZ CP",-5.69
-5,1.0,"MeOH ... MeOH","MP2/cc-pVTZ CP",-5.75
-5,1.05,"MeOH ... MeOH","MP2/cc-pVTZ CP",-5.58
-5,1.1,"MeOH ... MeOH","MP2/cc-pVTZ CP",-5.28
-5,1.25,"MeOH ... MeOH","MP2/cc-pVTZ CP",-4.14
-5,1.5,"MeOH ... MeOH","MP2/cc-pVTZ CP",-2.52
-5,2.0,"MeOH ... MeOH","MP2/cc-pVTZ CP",-1.01
-6,0.9,"MeOH ... MeNH2","MP2/cc-pVTZ CP",-6.97
-6,0.95,"MeOH ... MeNH2","MP2/cc-pVTZ CP",-7.47
-6,1.0,"MeOH ... MeNH2","MP2/cc-pVTZ CP",-7.54
-6,1.05,"MeOH ... MeNH2","MP2/cc-pVTZ CP",-7.34
-6,1.1,"MeOH ... MeNH2","MP2/cc-pVTZ CP",-6.97
-6,1.25,"MeOH ... MeNH2","MP2/cc-pVTZ CP",-5.5
-6,1.5,"MeOH ... MeNH2","MP2/cc-pVTZ CP",-3.35
-6,2.0,"MeOH ... MeNH2","MP2/cc-pVTZ CP",-1.27
-7,0.9,"MeOH ... Peptide","MP2/cc-pVTZ CP",-7.63
-7,0.95,"MeOH ... Peptide","MP2/cc-pVTZ CP",-8.14
-7,1.0,"MeOH ... Peptide","MP2/cc-pVTZ CP",-8.22
-7,1.05,"MeOH ... Peptide","MP2/cc-pVTZ CP",-8.02
-7,1.1,"MeOH ... Peptide","MP2/cc-pVTZ CP",-7.66
-7,1.25,"MeOH ... Peptide","MP2/cc-pVTZ CP",-6.18
-7,1.5,"MeOH ... Peptide","MP2/cc-pVTZ CP",-3.65
-7,2.0,"MeOH ... Peptide","MP2/cc-pVTZ CP",-1.1
-8,0.9,"MeOH ... Water","MP2/cc-pVTZ CP",-4.59
-8,0.95,"MeOH ... Water","MP2/cc-pVTZ CP",-4.95
-8,1.0,"MeOH ... Water","MP2/cc-pVTZ CP",-5.0
-8,1.05,"MeOH ... Water","MP2/cc-pVTZ CP",-4.85
-8,1.1,"MeOH ... Water","MP2/cc-pVTZ CP",-4.59
-8,1.25,"MeOH ... Water","MP2/cc-pVTZ CP",-3.59
-8,1.5,"MeOH ... Water","MP2/cc-pVTZ CP",-2.2
-8,2.0,"MeOH ... Water","MP2/cc-pVTZ CP",-0.91
-9,0.9,"MeNH2 ... MeOH","MP2/cc-pVTZ CP",-2.81
-9,0.95,"MeNH2 ... MeOH","MP2/cc-pVTZ CP",-3.04
-9,1.0,"MeNH2 ... MeOH","MP2/cc-pVTZ CP",-3.04
-9,1.05,"MeNH2 ... MeOH","MP2/cc-pVTZ CP",-2.9
-9,1.1,"MeNH2 ... MeOH","MP2/cc-pVTZ CP",-2.69
-9,1.25,"MeNH2 ... MeOH","MP2/cc-pVTZ CP",-1.98
-9,1.5,"MeNH2 ... MeOH","MP2/cc-pVTZ CP",-1.1
-9,2.0,"MeNH2 ... MeOH","MP2/cc-pVTZ CP",-0.39
-10,0.9,"MeNH2 ... MeNH2","MP2/cc-pVTZ CP",-3.7
-10,0.95,"MeNH2 ... MeNH2","MP2/cc-pVTZ CP",-4.09
-10,1.0,"MeNH2 ... MeNH2","MP2/cc-pVTZ CP",-4.15
-10,1.05,"MeNH2 ... MeNH2","MP2/cc-pVTZ CP",-4.01
-10,1.1,"MeNH2 ... MeNH2","MP2/cc-pVTZ CP",-3.75
-10,1.25,"MeNH2 ... MeNH2","MP2/cc-pVTZ CP",-2.79
-10,1.5,"MeNH2 ... MeNH2","MP2/cc-pVTZ CP",-1.31
-10,2.0,"MeNH2 ... MeNH2","MP2/cc-pVTZ CP",-0.39
-11,0.9,"MeNH2 ... Peptide","MP2/cc-pVTZ CP",-4.95
-11,0.95,"MeNH2 ... Peptide","MP2/cc-pVTZ CP",-5.36
-11,1.0,"MeNH2 ... Peptide","MP2/cc-pVTZ CP",-5.41
-11,1.05,"MeNH2 ... Peptide","MP2/cc-pVTZ CP",-5.24
-11,1.1,"MeNH2 ... Peptide","MP2/cc-pVTZ CP",-4.94
-11,1.25,"MeNH2 ... Peptide","MP2/cc-pVTZ CP",-3.21
-11,1.5,"MeNH2 ... Peptide","MP2/cc-pVTZ CP",-1.4
-11,2.0,"MeNH2 ... Peptide","MP2/cc-pVTZ CP",-0.46
-12,0.9,"MeNH2 ... Water","MP2/cc-pVTZ CP",-6.75
-12,0.95,"MeNH2 ... Water","MP2/cc-pVTZ CP",-7.2
-12,1.0,"MeNH2 ... Water","MP2/cc-pVTZ CP",-7.25
-12,1.05,"MeNH2 ... Water","MP2/cc-pVTZ CP",-7.03
-12,1.1,"MeNH2 ... Water","MP2/cc-pVTZ CP",-6.66
-12,1.25,"MeNH2 ... Water","MP2/cc-pVTZ CP",-5.22
-12,1.5,"MeNH2 ... Water","MP2/cc-pVTZ CP",-3.15
-12,2.0,"MeNH2 ... Water","MP2/cc-pVTZ CP",-1.2
-13,0.9,"Peptide ... MeOH","MP2/cc-pVTZ CP",-5.67
-13,0.95,"Peptide ... MeOH","MP2/cc-pVTZ CP",-6.11
-13,1.0,"Peptide ... MeOH","MP2/cc-pVTZ CP",-6.18
-13,1.05,"Peptide ... MeOH","MP2/cc-pVTZ CP",-6.03
-13,1.1,"Peptide ... MeOH","MP2/cc-pVTZ CP",-5.74
-13,1.25,"Peptide ... MeOH","MP2/cc-pVTZ CP",-4.6
-13,1.5,"Peptide ... MeOH","MP2/cc-pVTZ CP",-2.95
-13,2.0,"Peptide ... MeOH","MP2/cc-pVTZ CP",-1.3
-14,0.9,"Peptide ... MeNH2","MP2/cc-pVTZ CP",-6.81
-14,0.95,"Peptide ... MeNH2","MP2/cc-pVTZ CP",-7.34
-14,1.0,"Peptide ... MeNH2","MP2/cc-pVTZ CP",-7.45
-14,1.05,"Peptide ... MeNH2","MP2/cc-pVTZ CP",-7.29
-14,1.1,"Peptide ... MeNH2","MP2/cc-pVTZ CP",-6.97
-14,1.25,"Peptide ... MeNH2","MP2/cc-pVTZ CP",-5.61
-14,1.5,"Peptide ... MeNH2","MP2/cc-pVTZ CP",-3.55
-14,2.0,"Peptide ... MeNH2","MP2/cc-pVTZ CP",-1.49
-15,0.9,"Peptide ... Peptide","MP2/cc-pVTZ CP",-8.02
-15,0.95,"Peptide ... Peptide","MP2/cc-pVTZ CP",-8.53
-15,1.0,"Peptide ... Peptide","MP2/cc-pVTZ CP",-8.62
-15,1.05,"Peptide ... Peptide","MP2/cc-pVTZ CP",-8.45
-15,1.1,"Peptide ... Peptide","MP2/cc-pVTZ CP",-8.1
-15,1.25,"Peptide ... Peptide","MP2/cc-pVTZ CP",-6.66
-15,1.5,"Peptide ... Peptide","MP2/cc-pVTZ CP",-4.42
-15,2.0,"Peptide ... Peptide","MP2/cc-pVTZ CP",-1.77
-16,0.9,"Peptide ... Water","MP2/cc-pVTZ CP",-4.7
-16,0.95,"Peptide ... Water","MP2/cc-pVTZ CP",-5.06
-16,1.0,"Peptide ... Water","MP2/cc-pVTZ CP",-5.12
-16,1.05,"Peptide ... Water","MP2/cc-pVTZ CP",-4.98
-16,1.1,"Peptide ... Water","MP2/cc-pVTZ CP",-4.74
-16,1.25,"Peptide ... Water","MP2/cc-pVTZ CP",-3.79
-16,1.5,"Peptide ... Water","MP2/cc-pVTZ CP",-2.45
-16,2.0,"Peptide ... Water","MP2/cc-pVTZ CP",-1.13
-17,0.9,"Uracil ... Uracil (BP)","MP2/cc-pVTZ CP",-15.7
-17,0.95,"Uracil ... Uracil (BP)","MP2/cc-pVTZ CP",-16.9
-17,1.0,"Uracil ... Uracil (BP)","MP2/cc-pVTZ CP",-17.18
-17,1.05,"Uracil ... Uracil (BP)","MP2/cc-pVTZ CP",-16.86
-17,1.1,"Uracil ... Uracil (BP)","MP2/cc-pVTZ CP",-16.17
-17,1.25,"Uracil ... Uracil (BP)","MP2/cc-pVTZ CP",-13.15
-17,1.5,"Uracil ... Uracil (BP)","MP2/cc-pVTZ CP",-8.35
-17,2.0,"Uracil ... Uracil (BP)","MP2/cc-pVTZ CP",-3.33
-18,0.9,"Water ... Pyridine","MP2/cc-pVTZ CP",-6.39
-18,0.95,"Water ... Pyridine","MP2/cc-pVTZ CP",-6.8
-18,1.0,"Water ... Pyridine","MP2/cc-pVTZ CP",-6.83
-18,1.05,"Water ... Pyridine","MP2/cc-pVTZ CP",-6.62
-18,1.1,"Water ... Pyridine","MP2/cc-pVTZ CP",-6.27
-18,1.25,"Water ... Pyridine","MP2/cc-pVTZ CP",-4.93
-18,1.5,"Water ... Pyridine","MP2/cc-pVTZ CP",-3.01
-18,2.0,"Water ... Pyridine","MP2/cc-pVTZ CP",-1.19
-19,0.9,"MeOH ... Pyridine","MP2/cc-pVTZ CP",-6.78
-19,0.95,"MeOH ... Pyridine","MP2/cc-pVTZ CP",-7.31
-19,1.0,"MeOH ... Pyridine","MP2/cc-pVTZ CP",-7.4
-19,1.05,"MeOH ... Pyridine","MP2/cc-pVTZ CP",-7.23
-19,1.1,"MeOH ... Pyridine","MP2/cc-pVTZ CP",-6.88
-19,1.25,"MeOH ... Pyridine","MP2/cc-pVTZ CP",-5.48
-19,1.5,"MeOH ... Pyridine","MP2/cc-pVTZ CP",-3.38
-19,2.0,"MeOH ... Pyridine","MP2/cc-pVTZ CP",-1.33
-20,0.9,"AcOH ... AcOH","MP2/cc-pVTZ CP",-17.45
-20,0.95,"AcOH ... AcOH","MP2/cc-pVTZ CP",-18.79
-20,1.0,"AcOH ... AcOH","MP2/cc-pVTZ CP",-19.09
-20,1.05,"AcOH ... AcOH","MP2/cc-pVTZ CP",-18.72
-20,1.1,"AcOH ... AcOH","MP2/cc-pVTZ CP",-17.94
-20,1.25,"AcOH ... AcOH","MP2/cc-pVTZ CP",-14.56
-20,1.5,"AcOH ... AcOH","MP2/cc-pVTZ CP",-9.21
-20,2.0,"AcOH ... AcOH","MP2/cc-pVTZ CP",-3.59
-21,0.9,"AcNH2 ... AcNH2","MP2/cc-pVTZ CP",-14.93
-21,0.95,"AcNH2 ... AcNH2","MP2/cc-pVTZ CP",-16.03
-21,1.0,"AcNH2 ... AcNH2","MP2/cc-pVTZ CP",-16.26
-21,1.05,"AcNH2 ... AcNH2","MP2/cc-pVTZ CP",-15.94
-21,1.1,"AcNH2 ... AcNH2","MP2/cc-pVTZ CP",-15.26
-21,1.25,"AcNH2 ... AcNH2","MP2/cc-pVTZ CP",-12.42
-21,1.5,"AcNH2 ... AcNH2","MP2/cc-pVTZ CP",-8.0
-21,2.0,"AcNH2 ... AcNH2","MP2/cc-pVTZ CP",-3.0
-22,0.9,"AcOH ... Uracil","MP2/cc-pVTZ CP",-17.9
-22,0.95,"AcOH ... Uracil","MP2/cc-pVTZ CP",-19.19
-22,1.0,"AcOH ... Uracil","MP2/cc-pVTZ CP",-19.49
-22,1.05,"AcOH ... Uracil","MP2/cc-pVTZ CP",-19.15
-22,1.1,"AcOH ... Uracil","MP2/cc-pVTZ CP",-18.41
-22,1.25,"AcOH ... Uracil","MP2/cc-pVTZ CP",-15.14
-22,1.5,"AcOH ... Uracil","MP2/cc-pVTZ CP",-9.86
-22,2.0,"AcOH ... Uracil","MP2/cc-pVTZ CP",-4.15
-23,0.9,"AcNH2 ... Uracil","MP2/cc-pVTZ CP",-17.7
-23,0.95,"AcNH2 ... Uracil","MP2/cc-pVTZ CP",-18.89
-23,1.0,"AcNH2 ... Uracil","MP2/cc-pVTZ CP",-19.19
-23,1.05,"AcNH2 ... Uracil","MP2/cc-pVTZ CP",-18.9
-23,1.1,"AcNH2 ... Uracil","MP2/cc-pVTZ CP",-18.22
-23,1.25,"AcNH2 ... Uracil","MP2/cc-pVTZ CP",-15.21
-23,1.5,"AcNH2 ... Uracil","MP2/cc-pVTZ CP",-10.23
-23,2.0,"AcNH2 ... Uracil","MP2/cc-pVTZ CP",-4.65
-24,0.9,"Benzene ... Benzene (pi-pi)","MP2/cc-pVTZ CP",-0.23
-24,0.95,"Benzene ... Benzene (pi-pi)","MP2/cc-pVTZ CP",-2.07
-24,1.0,"Benzene ... Benzene (pi-pi)","MP2/cc-pVTZ CP",-2.74
-24,1.05,"Benzene ... Benzene (pi-pi)","MP2/cc-pVTZ CP",-2.8
-24,1.1,"Benzene ... Benzene (pi-pi)","MP2/cc-pVTZ CP",-2.58
-24,1.25,"Benzene ... Benzene (pi-pi)","MP2/cc-pVTZ CP",-1.54
-24,1.5,"Benzene ... Benzene (pi-pi)","MP2/cc-pVTZ CP",-0.49
-24,2.0,"Benzene ... Benzene (pi-pi)","MP2/cc-pVTZ CP",-0.06
-25,0.9,"Pyridine ... Pyridine (pi-pi)","MP2/cc-pVTZ CP",-1.32
-25,0.95,"Pyridine ... Pyridine (pi-pi)","MP2/cc-pVTZ CP",-3.17
-25,1.0,"Pyridine ... Pyridine (pi-pi)","MP2/cc-pVTZ CP",-3.83
-25,1.05,"Pyridine ... Pyridine (pi-pi)","MP2/cc-pVTZ CP",-3.86
-25,1.1,"Pyridine ... Pyridine (pi-pi)","MP2/cc-pVTZ CP",-3.58
-25,1.25,"Pyridine ... Pyridine (pi-pi)","MP2/cc-pVTZ CP",-2.36
-25,1.5,"Pyridine ... Pyridine (pi-pi)","MP2/cc-pVTZ CP",-0.96
-25,2.0,"Pyridine ... Pyridine (pi-pi)","MP2/cc-pVTZ CP",-0.24
-26,0.9,"Uracil ... Uracil (pi-pi)","MP2/cc-pVTZ CP",-7.86
-26,0.95,"Uracil ... Uracil (pi-pi)","MP2/cc-pVTZ CP",-9.5
-26,1.0,"Uracil ... Uracil (pi-pi)","MP2/cc-pVTZ CP",-9.82
-26,1.05,"Uracil ... Uracil (pi-pi)","MP2/cc-pVTZ CP",-9.43
-26,1.1,"Uracil ... Uracil (pi-pi)","MP2/cc-pVTZ CP",-8.69
-26,1.25,"Uracil ... Uracil (pi-pi)","MP2/cc-pVTZ CP",-6.07
-26,1.5,"Uracil ... Uracil (pi-pi)","MP2/cc-pVTZ CP",-3.1
-26,2.0,"Uracil ... Uracil (pi-pi)","MP2/cc-pVTZ CP",-0.99
-27,0.9,"Benzene ... Pyridine (pi-pi)","MP2/cc-pVTZ CP",-0.73
-27,0.95,"Benzene ... Pyridine (pi-pi)","MP2/cc-pVTZ CP",-2.69
-27,1.0,"Benzene ... Pyridine (pi-pi)","MP2/cc-pVTZ CP",-3.37
-27,1.05,"Benzene ... Pyridine (pi-pi)","MP2/cc-pVTZ CP",-3.4
-27,1.1,"Benzene ... Pyridine (pi-pi)","MP2/cc-pVTZ CP",-3.13
-27,1.25,"Benzene ... Pyridine (pi-pi)","MP2/cc-pVTZ CP",-1.97
-27,1.5,"Benzene ... Pyridine (pi-pi)","MP2/cc-pVTZ CP",-0.72
-27,2.0,"Benzene ... Pyridine (pi-pi)","MP2/cc-pVTZ CP",-0.15
-28,0.9,"Benzene ... Uracil (pi-pi)","MP2/cc-pVTZ CP",-3.53
-28,0.95,"Benzene ... Uracil (pi-pi)","MP2/cc-pVTZ CP",-5.22
-28,1.0,"Benzene ... Uracil (pi-pi)","MP2/cc-pVTZ CP",-5.71
-28,1.05,"Benzene ... Uracil (pi-pi)","MP2/cc-pVTZ CP",-5.55
-28,1.1,"Benzene ... Uracil (pi-pi)","MP2/cc-pVTZ CP",-5.08
-28,1.25,"Benzene ... Uracil (pi-pi)","MP2/cc-pVTZ CP",-3.29
-28,1.5,"Benzene ... Uracil (pi-pi)","MP2/cc-pVTZ CP",-1.36
-28,2.0,"Benzene ... Uracil (pi-pi)","MP2/cc-pVTZ CP",-0.25
-29,0.9,"Pyridine ... Uracil (pi-pi)","MP2/cc-pVTZ CP",-3.74
-29,0.95,"Pyridine ... Uracil (pi-pi)","MP2/cc-pVTZ CP",-6.17
-29,1.0,"Pyridine ... Uracil (pi-pi)","MP2/cc-pVTZ CP",-6.81
-29,1.05,"Pyridine ... Uracil (pi-pi)","MP2/cc-pVTZ CP",-6.58
-29,1.1,"Pyridine ... Uracil (pi-pi)","MP2/cc-pVTZ CP",-5.97
-29,1.25,"Pyridine ... Uracil (pi-pi)","MP2/cc-pVTZ CP",-3.87
-29,1.5,"Pyridine ... Uracil (pi-pi)","MP2/cc-pVTZ CP",-1.78
-29,2.0,"Pyridine ... Uracil (pi-pi)","MP2/cc-pVTZ CP",-0.53
-30,0.9,"Benzene ... Ethene","MP2/cc-pVTZ CP",-0.26
-30,0.95,"Benzene ... Ethene","MP2/cc-pVTZ CP",-1.13
-30,1.0,"Benzene ... Ethene","MP2/cc-pVTZ CP",-1.41
-30,1.05,"Benzene ... Ethene","MP2/cc-pVTZ CP",-1.4
-30,1.1,"Benzene ... Ethene","MP2/cc-pVTZ CP",-1.26
-30,1.25,"Benzene ... Ethene","MP2/cc-pVTZ CP",-0.69
-30,1.5,"Benzene ... Ethene","MP2/cc-pVTZ CP",-0.17
-30,2.0,"Benzene ... Ethene","MP2/cc-pVTZ CP",0.01
-31,0.9,"Uracil ... Ethene","MP2/cc-pVTZ CP",-2.57
-31,0.95,"Uracil ... Ethene","MP2/cc-pVTZ CP",-3.24
-31,1.0,"Uracil ... Ethene","MP2/cc-pVTZ CP",-3.38
-31,1.05,"Uracil ... Ethene","MP2/cc-pVTZ CP",-3.24
-31,1.1,"Uracil ... Ethene","MP2/cc-pVTZ CP",-2.96
-31,1.25,"Uracil ... Ethene","MP2/cc-pVTZ CP",-1.99
-31,1.5,"Uracil ... Ethene","MP2/cc-pVTZ CP",-0.93
-31,2.0,"Uracil ... Ethene","MP2/cc-pVTZ CP",-0.25
-32,0.9,"Uracil ... Ethyne","MP2/cc-pVTZ CP",-2.79
-32,0.95,"Uracil ... Ethyne","MP2/cc-pVTZ CP",-3.56
-32,1.0,"Uracil ... Ethyne","MP2/cc-pVTZ CP",-3.74
-32,1.05,"Uracil ... Ethyne","MP2/cc-pVTZ CP",-3.59
-32,1.1,"Uracil ... Ethyne","MP2/cc-pVTZ CP",-3.29
-32,1.25,"Uracil ... Ethyne","MP2/cc-pVTZ CP",-2.23
-32,1.5,"Uracil ... Ethyne","MP2/cc-pVTZ CP",-1.04
-32,2.0,"Uracil ... Ethyne","MP2/cc-pVTZ CP",-0.27
-33,0.9,"Pyridine ... Ethene","MP2/cc-pVTZ CP",-0.89
-33,0.95,"Pyridine ... Ethene","MP2/cc-pVTZ CP",-1.62
-33,1.0,"Pyridine ... Ethene","MP2/cc-pVTZ CP",-1.86
-33,1.05,"Pyridine ... Ethene","MP2/cc-pVTZ CP",-1.83
-33,1.1,"Pyridine ... Ethene","MP2/cc-pVTZ CP",-1.67
-33,1.25,"Pyridine ... Ethene","MP2/cc-pVTZ CP",-1.03
-33,1.5,"Pyridine ... Ethene","MP2/cc-pVTZ CP",-0.37
-33,2.0,"Pyridine ... Ethene","MP2/cc-pVTZ CP",-0.05
-34,0.9,"Pentane ... Pentane","MP2/cc-pVTZ CP",-2.86
-34,0.95,"Pentane ... Pentane","MP2/cc-pVTZ CP",-3.62
-34,1.0,"Pentane ... Pentane","MP2/cc-pVTZ CP",-3.77
-34,1.05,"Pentane ... Pentane","MP2/cc-pVTZ CP",-3.61
-34,1.1,"Pentane ... Pentane","MP2/cc-pVTZ CP",-3.3
-34,1.25,"Pentane ... Pentane","MP2/cc-pVTZ CP",-2.24
-34,1.5,"Pentane ... Pentane","MP2/cc-pVTZ CP",-1.05
-34,2.0,"Pentane ... Pentane","MP2/cc-pVTZ CP",-0.27
-35,0.9,"Neopentane ... Pentane","MP2/cc-pVTZ CP",-1.85
-35,0.95,"Neopentane ... Pentane","MP2/cc-pVTZ CP",-2.49
-35,1.0,"Neopentane ... Pentane","MP2/cc-pVTZ CP",-2.61
-35,1.05,"Neopentane ... Pentane","MP2/cc-pVTZ CP",-2.48
-35,1.1,"Neopentane ... Pentane","MP2/cc-pVTZ CP",-2.25
-35,1.25,"Neopentane ... Pentane","MP2/cc-pVTZ CP",-1.5
-35,1.5,"Neopentane ... Pentane","MP2/cc-pVTZ CP",-0.7
-35,2.0,"Neopentane ... Pentane","MP2/cc-pVTZ CP",-0.18
-36,0.9,"Neopentane ... Neopentane","MP2/cc-pVTZ CP",-1.45
-36,0.95,"Neopentane ... Neopentane","MP2/cc-pVTZ CP",-1.74
-36,1.0,"Neopentane ... Neopentane","MP2/cc-pVTZ CP",-1.77
-36,1.05,"Neopentane ... Neopentane","MP2/cc-pVTZ CP",-1.68
-36,1.1,"Neopentane ... Neopentane","MP2/cc-pVTZ CP",-1.54
-36,1.25,"Neopentane ... Neopentane","MP2/cc-pVTZ CP",-1.05
-36,1.5,"Neopentane ... Neopentane","MP2/cc-pVTZ CP",-0.5
-36,2.0,"Neopentane ... Neopentane","MP2/cc-pVTZ CP",-0.14
-37,0.9,"Cyclopentane ... Neopentane","MP2/cc-pVTZ CP",-1.61
-37,0.95,"Cyclopentane ... Neopentane","MP2/cc-pVTZ CP",-2.25
-37,1.0,"Cyclopentane ... Neopentane","MP2/cc-pVTZ CP",-2.41
-37,1.05,"Cyclopentane ... Neopentane","MP2/cc-pVTZ CP",-2.33
-37,1.1,"Cyclopentane ... Neopentane","MP2/cc-pVTZ CP",-2.14
-37,1.25,"Cyclopentane ... Neopentane","MP2/cc-pVTZ CP",-1.47
-37,1.5,"Cyclopentane ... Neopentane","MP2/cc-pVTZ CP",-0.71
-37,2.0,"Cyclopentane ... Neopentane","MP2/cc-pVTZ CP",-0.19
-38,0.9,"Cyclopentane ... Cyclopentane","MP2/cc-pVTZ CP",-2.24
-38,0.95,"Cyclopentane ... Cyclopentane","MP2/cc-pVTZ CP",-2.84
-38,1.0,"Cyclopentane ... Cyclopentane","MP2/cc-pVTZ CP",-3.0
-38,1.05,"Cyclopentane ... Cyclopentane","MP2/cc-pVTZ CP",-2.86
-38,1.1,"Cyclopentane ... Cyclopentane","MP2/cc-pVTZ CP",-2.6
-38,1.25,"Cyclopentane ... Cyclopentane","MP2/cc-pVTZ CP",-1.71
-38,1.5,"Cyclopentane ... Cyclopentane","MP2/cc-pVTZ CP",-0.79
-38,2.0,"Cyclopentane ... Cyclopentane","MP2/cc-pVTZ CP",-0.2
-39,0.9,"Benzene ... Cyclopentane","MP2/cc-pVTZ CP",-2.16
-39,0.95,"Benzene ... Cyclopentane","MP2/cc-pVTZ CP",-3.24
-39,1.0,"Benzene ... Cyclopentane","MP2/cc-pVTZ CP",-3.57
-39,1.05,"Benzene ... Cyclopentane","MP2/cc-pVTZ CP",-3.47
-39,1.1,"Benzene ... Cyclopentane","MP2/cc-pVTZ CP",-3.17
-39,1.25,"Benzene ... Cyclopentane","MP2/cc-pVTZ CP",-2.07
-39,1.5,"Benzene ... Cyclopentane","MP2/cc-pVTZ CP",-0.9
-39,2.0,"Benzene ... Cyclopentane","MP2/cc-pVTZ CP",-0.19
-40,0.9,"Benzene ... Neopentane","MP2/cc-pVTZ CP",-1.86
-40,0.95,"Benzene ... Neopentane","MP2/cc-pVTZ CP",-2.68
-40,1.0,"Benzene ... Neopentane","MP2/cc-pVTZ CP",-2.89
-40,1.05,"Benzene ... Neopentane","MP2/cc-pVTZ CP",-2.8
-40,1.1,"Benzene ... Neopentane","MP2/cc-pVTZ CP",-2.57
-40,1.25,"Benzene ... Neopentane","MP2/cc-pVTZ CP",-1.7
-40,1.5,"Benzene ... Neopentane","MP2/cc-pVTZ CP",-0.77
-40,2.0,"Benzene ... Neopentane","MP2/cc-pVTZ CP",-0.19
-41,0.9,"Uracil ... Pentane","MP2/cc-pVTZ CP",-3.83
-41,0.95,"Uracil ... Pentane","MP2/cc-pVTZ CP",-4.69
-41,1.0,"Uracil ... Pentane","MP2/cc-pVTZ CP",-4.84
-41,1.05,"Uracil ... Pentane","MP2/cc-pVTZ CP",-4.6
-41,1.1,"Uracil ... Pentane","MP2/cc-pVTZ CP",-4.08
-41,1.25,"Uracil ... Pentane","MP2/cc-pVTZ CP",-2.44
-41,1.5,"Uracil ... Pentane","MP2/cc-pVTZ CP",-0.98
-41,2.0,"Uracil ... Pentane","MP2/cc-pVTZ CP",-0.21
-42,0.9,"Uracil ... Cyclopentane","MP2/cc-pVTZ CP",-3.05
-42,0.95,"Uracil ... Cyclopentane","MP2/cc-pVTZ CP",-3.97
-42,1.0,"Uracil ... Cyclopentane","MP2/cc-pVTZ CP",-4.13
-42,1.05,"Uracil ... Cyclopentane","MP2/cc-pVTZ CP",-3.92
-42,1.1,"Uracil ... Cyclopentane","MP2/cc-pVTZ CP",-3.54
-42,1.25,"Uracil ... Cyclopentane","MP2/cc-pVTZ CP",-2.29
-42,1.5,"Uracil ... Cyclopentane","MP2/cc-pVTZ CP",-1.02
-42,2.0,"Uracil ... Cyclopentane","MP2/cc-pVTZ CP",-0.25
-43,0.9,"Uracil ... Neopentane","MP2/cc-pVTZ CP",-2.87
-43,0.95,"Uracil ... Neopentane","MP2/cc-pVTZ CP",-3.6
-43,1.0,"Uracil ... Neopentane","MP2/cc-pVTZ CP",-3.7
-43,1.05,"Uracil ... Neopentane","MP2/cc-pVTZ CP",-3.49
-43,1.1,"Uracil ... Neopentane","MP2/cc-pVTZ CP",-3.15
-43,1.25,"Uracil ... Neopentane","MP2/cc-pVTZ CP",-2.05
-43,1.5,"Uracil ... Neopentane","MP2/cc-pVTZ CP",-0.92
-43,2.0,"Uracil ... Neopentane","MP2/cc-pVTZ CP",-0.23
-44,0.9,"Ethene ... Pentane","MP2/cc-pVTZ CP",-1.66
-44,0.95,"Ethene ... Pentane","MP2/cc-pVTZ CP",-1.97
-44,1.0,"Ethene ... Pentane","MP2/cc-pVTZ CP",-1.99
-44,1.05,"Ethene ... Pentane","MP2/cc-pVTZ CP",-1.86
-44,1.1,"Ethene ... Pentane","MP2/cc-pVTZ CP",-1.67
-44,1.25,"Ethene ... Pentane","MP2/cc-pVTZ CP",-1.09
-44,1.5,"Ethene ... Pentane","MP2/cc-pVTZ CP",-0.49
-44,2.0,"Ethene ... Pentane","MP2/cc-pVTZ CP",-0.12
-45,0.9,"Ethyne ... Pentane","MP2/cc-pVTZ CP",-1.13
-45,0.95,"Ethyne ... Pentane","MP2/cc-pVTZ CP",-1.63
-45,1.0,"Ethyne ... Pentane","MP2/cc-pVTZ CP",-1.75
-45,1.05,"Ethyne ... Pentane","MP2/cc-pVTZ CP",-1.68
-45,1.1,"Ethyne ... Pentane","MP2/cc-pVTZ CP",-1.52
-45,1.25,"Ethyne ... Pentane","MP2/cc-pVTZ CP",-0.98
-45,1.5,"Ethyne ... Pentane","MP2/cc-pVTZ CP",-0.42
-45,2.0,"Ethyne ... Pentane","MP2/cc-pVTZ CP",-0.1
-46,0.9,"Peptide ... Pentane","MP2/cc-pVTZ CP",-3.75
-46,0.95,"Peptide ... Pentane","MP2/cc-pVTZ CP",-4.21
-46,1.0,"Peptide ... Pentane","MP2/cc-pVTZ CP",-4.24
-46,1.05,"Peptide ... Pentane","MP2/cc-pVTZ CP",-4.05
-46,1.1,"Peptide ... Pentane","MP2/cc-pVTZ CP",-3.73
-46,1.25,"Peptide ... Pentane","MP2/cc-pVTZ CP",-2.63
-46,1.5,"Peptide ... Pentane","MP2/cc-pVTZ CP",-1.19
-46,2.0,"Peptide ... Pentane","MP2/cc-pVTZ CP",-0.29
-47,0.9,"Benzene ... Benzene (TS)","MP2/cc-pVTZ CP",-1.64
-47,0.95,"Benzene ... Benzene (TS)","MP2/cc-pVTZ CP",-2.58
-47,1.0,"Benzene ... Benzene (TS)","MP2/cc-pVTZ CP",-2.87
-47,1.05,"Benzene ... Benzene (TS)","MP2/cc-pVTZ CP",-2.82
-47,1.1,"Benzene ... Benzene (TS)","MP2/cc-pVTZ CP",-2.6
-47,1.25,"Benzene ... Benzene (TS)","MP2/cc-pVTZ CP",-1.77
-47,1.5,"Benzene ... Benzene (TS)","MP2/cc-pVTZ CP",-0.83
-47,2.0,"Benzene ... Benzene (TS)","MP2/cc-pVTZ CP",-0.22
-48,0.9,"Pyridine ... Pyridine (TS)","MP2/cc-pVTZ CP",-2.53
-48,0.95,"Pyridine ... Pyridine (TS)","MP2/cc-pVTZ CP",-3.31
-48,1.0,"Pyridine ... Pyridine (TS)","MP2/cc-pVTZ CP",-3.53
-48,1.05,"Pyridine ... Pyridine (TS)","MP2/cc-pVTZ CP",-3.45
-48,1.1,"Pyridine ... Pyridine (TS)","MP2/cc-pVTZ CP",-3.22
-48,1.25,"Pyridine ... Pyridine (TS)","MP2/cc-pVTZ CP",-2.29
-48,1.5,"Pyridine ... Pyridine (TS)","MP2/cc-pVTZ CP",-1.18
-48,2.0,"Pyridine ... Pyridine (TS)","MP2/cc-pVTZ CP",-0.37
-49,0.9,"Benzene ... Pyridine (TS)","MP2/cc-pVTZ CP",-2.09
-49,0.95,"Benzene ... Pyridine (TS)","MP2/cc-pVTZ CP",-3.04
-49,1.0,"Benzene ... Pyridine (TS)","MP2/cc-pVTZ CP",-3.32
-49,1.05,"Benzene ... Pyridine (TS)","MP2/cc-pVTZ CP",-3.26
-49,1.1,"Benzene ... Pyridine (TS)","MP2/cc-pVTZ CP",-3.02
-49,1.25,"Benzene ... Pyridine (TS)","MP2/cc-pVTZ CP",-2.1
-49,1.5,"Benzene ... Pyridine (TS)","MP2/cc-pVTZ CP",-1.05
-49,2.0,"Benzene ... Pyridine (TS)","MP2/cc-pVTZ CP",-0.33
-50,0.9,"Benzene ... Ethyne (CH-pi)","MP2/cc-pVTZ CP",-1.87
-50,0.95,"Benzene ... Ethyne (CH-pi)","MP2/cc-pVTZ CP",-2.65
-50,1.0,"Benzene ... Ethyne (CH-pi)","MP2/cc-pVTZ CP",-2.86
-50,1.05,"Benzene ... Ethyne (CH-pi)","MP2/cc-pVTZ CP",-2.79
-50,1.1,"Benzene ... Ethyne (CH-pi)","MP2/cc-pVTZ CP",-2.58
-50,1.25,"Benzene ... Ethyne (CH-pi)","MP2/cc-pVTZ CP",-1.79
-50,1.5,"Benzene ... Ethyne (CH-pi)","MP2/cc-pVTZ CP",-0.89
-50,2.0,"Benzene ... Ethyne (CH-pi)","MP2/cc-pVTZ CP",-0.27
-51,0.9,"Ethyne ... Ethyne (TS)","MP2/cc-pVTZ CP",-1.21
-51,0.95,"Ethyne ... Ethyne (TS)","MP2/cc-pVTZ CP",-1.47
-51,1.0,"Ethyne ... Ethyne (TS)","MP2/cc-pVTZ CP",-1.52
-51,1.05,"Ethyne ... Ethyne (TS)","MP2/cc-pVTZ CP",-1.46
-51,1.1,"Ethyne ... Ethyne (TS)","MP2/cc-pVTZ CP",-1.35
-51,1.25,"Ethyne ... Ethyne (TS)","MP2/cc-pVTZ CP",-0.93
-51,1.5,"Ethyne ... Ethyne (TS)","MP2/cc-pVTZ CP",-0.46
-51,2.0,"Ethyne ... Ethyne (TS)","MP2/cc-pVTZ CP",-0.14
-52,0.9,"Benzene ... AcOH (OH-pi)","MP2/cc-pVTZ CP",-3.97
-52,0.95,"Benzene ... AcOH (OH-pi)","MP2/cc-pVTZ CP",-4.58
-52,1.0,"Benzene ... AcOH (OH-pi)","MP2/cc-pVTZ CP",-4.7
-52,1.05,"Benzene ... AcOH (OH-pi)","MP2/cc-pVTZ CP",-4.55
-52,1.1,"Benzene ... AcOH (OH-pi)","MP2/cc-pVTZ CP",-4.25
-52,1.25,"Benzene ... AcOH (OH-pi)","MP2/cc-pVTZ CP",-3.13
-52,1.5,"Benzene ... AcOH (OH-pi)","MP2/cc-pVTZ CP",-1.7
-52,2.0,"Benzene ... AcOH (OH-pi)","MP2/cc-pVTZ CP",-0.55
-53,0.9,"Benzene ... AcNH2 (NH-pi)","MP2/cc-pVTZ CP",-3.79
-53,0.95,"Benzene ... AcNH2 (NH-pi)","MP2/cc-pVTZ CP",-4.27
-53,1.0,"Benzene ... AcNH2 (NH-pi)","MP2/cc-pVTZ CP",-4.36
-53,1.05,"Benzene ... AcNH2 (NH-pi)","MP2/cc-pVTZ CP",-4.23
-53,1.1,"Benzene ... AcNH2 (NH-pi)","MP2/cc-pVTZ CP",-3.97
-53,1.25,"Benzene ... AcNH2 (NH-pi)","MP2/cc-pVTZ CP",-2.97
-53,1.5,"Benzene ... AcNH2 (NH-pi)","MP2/cc-pVTZ CP",-1.65
-53,2.0,"Benzene ... AcNH2 (NH-pi)","MP2/cc-pVTZ CP",-0.48
-54,0.9,"Benzene ... Water (OH-pi)","MP2/cc-pVTZ CP",-2.8
-54,0.95,"Benzene ... Water (OH-pi)","MP2/cc-pVTZ CP",-3.21
-54,1.0,"Benzene ... Water (OH-pi)","MP2/cc-pVTZ CP",-3.27
-54,1.05,"Benzene ... Water (OH-pi)","MP2/cc-pVTZ CP",-3.13
-54,1.1,"Benzene ... Water (OH-pi)","MP2/cc-pVTZ CP",-2.9
-54,1.25,"Benzene ... Water (OH-pi)","MP2/cc-pVTZ CP",-2.1
-54,1.5,"Benzene ... Water (OH-pi)","MP2/cc-pVTZ CP",-1.16
-54,2.0,"Benzene ... Water (OH-pi)","MP2/cc-pVTZ CP",-0.42
-55,0.9,"Benzene ... MeOH (OH-pi)","MP2/cc-pVTZ CP",-3.45
-55,0.95,"Benzene ... MeOH (OH-pi)","MP2/cc-pVTZ CP",-4.05
-55,1.0,"Benzene ... MeOH (OH-pi)","MP2/cc-pVTZ CP",-4.19
-55,1.05,"Benzene ... MeOH (OH-pi)","MP2/cc-pVTZ CP",-4.07
-55,1.1,"Benzene ... MeOH (OH-pi)","MP2/cc-pVTZ CP",-3.8
-55,1.25,"Benzene ... MeOH (OH-pi)","MP2/cc-pVTZ CP",-2.8
-55,1.5,"Benzene ... MeOH (OH-pi)","MP2/cc-pVTZ CP",-1.53
-55,2.0,"Benzene ... MeOH (OH-pi)","MP2/cc-pVTZ CP",-0.52
-56,0.9,"Benzene ... MeNH2 (NH-pi)","MP2/cc-pVTZ CP",-2.51
-56,0.95,"Benzene ... MeNH2 (NH-pi)","MP2/cc-pVTZ CP",-3.09
-56,1.0,"Benzene ... MeNH2 (NH-pi)","MP2/cc-pVTZ CP",-3.23
-56,1.05,"Benzene ... MeNH2 (NH-pi)","MP2/cc-pVTZ CP",-3.12
-56,1.1,"Benzene ... MeNH2 (NH-pi)","MP2/cc-pVTZ CP",-2.86
-56,1.25,"Benzene ... MeNH2 (NH-pi)","MP2/cc-pVTZ CP",-1.95
-56,1.5,"Benzene ... MeNH2 (NH-pi)","MP2/cc-pVTZ CP",-0.94
-56,2.0,"Benzene ... MeNH2 (NH-pi)","MP2/cc-pVTZ CP",-0.26
-57,0.9,"Benzene ... Peptide (NH-pi)","MP2/cc-pVTZ CP",-3.75
-57,0.95,"Benzene ... Peptide (NH-pi)","MP2/cc-pVTZ CP",-4.96
-57,1.0,"Benzene ... Peptide (NH-pi)","MP2/cc-pVTZ CP",-5.28
-57,1.05,"Benzene ... Peptide (NH-pi)","MP2/cc-pVTZ CP",-5.14
-57,1.1,"Benzene ... Peptide (NH-pi)","MP2/cc-pVTZ CP",-4.78
-57,1.25,"Benzene ... Peptide (NH-pi)","MP2/cc-pVTZ CP",-3.41
-57,1.5,"Benzene ... Peptide (NH-pi)","MP2/cc-pVTZ CP",-1.8
-57,2.0,"Benzene ... Peptide (NH-pi)","MP2/cc-pVTZ CP",-0.62
-58,0.9,"Pyridine ... Pyridine (CH-N)","MP2/cc-pVTZ CP",-2.8
-58,0.95,"Pyridine ... Pyridine (CH-N)","MP2/cc-pVTZ CP",-3.82
-58,1.0,"Pyridine ... Pyridine (CH-N)","MP2/cc-pVTZ CP",-4.15
-58,1.05,"Pyridine ... Pyridine (CH-N)","MP2/cc-pVTZ CP",-3.89
-58,1.1,"Pyridine ... Pyridine (CH-N)","MP2/cc-pVTZ CP",-3.45
-58,1.25,"Pyridine ... Pyridine (CH-N)","MP2/cc-pVTZ CP",-2.18
-58,1.5,"Pyridine ... Pyridine (CH-N)","MP2/cc-pVTZ CP",-1.01
-58,2.0,"Pyridine ... Pyridine (CH-N)","MP2/cc-pVTZ CP",-0.28
-59,0.9,"Ethyne ... Water (CH-O)","MP2/cc-pVTZ CP",-2.52
-59,0.95,"Ethyne ... Water (CH-O)","MP2/cc-pVTZ CP",-2.8
-59,1.0,"Ethyne ... Water (CH-O)","MP2/cc-pVTZ CP",-2.85
-59,1.05,"Ethyne ... Water (CH-O)","MP2/cc-pVTZ CP",-2.76
-59,1.1,"Ethyne ... Water (CH-O)","MP2/cc-pVTZ CP",-2.6
-59,1.25,"Ethyne ... Water (CH-O)","MP2/cc-pVTZ CP",-1.98
-59,1.5,"Ethyne ... Water (CH-O)","MP2/cc-pVTZ CP",-1.17
-59,2.0,"Ethyne ... Water (CH-O)","MP2/cc-pVTZ CP",-0.46
-60,0.9,"Ethyne ... AcOH (OH-pi)","MP2/cc-pVTZ CP",-4.28
-60,0.95,"Ethyne ... AcOH (OH-pi)","MP2/cc-pVTZ CP",-4.78
-60,1.0,"Ethyne ... AcOH (OH-pi)","MP2/cc-pVTZ CP",-4.86
-60,1.05,"Ethyne ... AcOH (OH-pi)","MP2/cc-pVTZ CP",-4.69
-60,1.1,"Ethyne ... AcOH (OH-pi)","MP2/cc-pVTZ CP",-4.39
-60,1.25,"Ethyne ... AcOH (OH-pi)","MP2/cc-pVTZ CP",-3.26
-60,1.5,"Ethyne ... AcOH (OH-pi)","MP2/cc-pVTZ CP",-1.77
-60,2.0,"Ethyne ... AcOH (OH-pi)","MP2/cc-pVTZ CP",-0.56
-61,0.9,"Pentane ... AcOH","MP2/cc-pVTZ CP",-2.7
-61,0.95,"Pentane ... AcOH","MP2/cc-pVTZ CP",-2.9
-61,1.0,"Pentane ... AcOH","MP2/cc-pVTZ CP",-2.88
-61,1.05,"Pentane ... AcOH","MP2/cc-pVTZ CP",-2.73
-61,1.1,"Pentane ... AcOH","MP2/cc-pVTZ CP",-2.52
-61,1.25,"Pentane ... AcOH","MP2/cc-pVTZ CP",-1.79
-61,1.5,"Pentane ... AcOH","MP2/cc-pVTZ CP",-0.78
-61,2.0,"Pentane ... AcOH","MP2/cc-pVTZ CP",-0.17
-62,0.9,"Pentane ... AcNH2","MP2/cc-pVTZ CP",-3.15
-62,0.95,"Pentane ... AcNH2","MP2/cc-pVTZ CP",-3.5
-62,1.0,"Pentane ... AcNH2","MP2/cc-pVTZ CP",-3.51
-62,1.05,"Pentane ... AcNH2","MP2/cc-pVTZ CP",-3.32
-62,1.1,"Pentane ... AcNH2","MP2/cc-pVTZ CP",-3.04
-62,1.25,"Pentane ... AcNH2","MP2/cc-pVTZ CP",-2.12
-62,1.5,"Pentane ... AcNH2","MP2/cc-pVTZ CP",-1.04
-62,2.0,"Pentane ... AcNH2","MP2/cc-pVTZ CP",-0.27
-63,0.9,"Benzene ... AcOH","MP2/cc-pVTZ CP",-2.73
-63,0.95,"Benzene ... AcOH","MP2/cc-pVTZ CP",-3.6
-63,1.0,"Benzene ... AcOH","MP2/cc-pVTZ CP",-3.8
-63,1.05,"Benzene ... AcOH","MP2/cc-pVTZ CP",-3.65
-63,1.1,"Benzene ... AcOH","MP2/cc-pVTZ CP",-3.34
-63,1.25,"Benzene ... AcOH","MP2/cc-pVTZ CP",-2.24
-63,1.5,"Benzene ... AcOH","MP2/cc-pVTZ CP",-1.02
-63,2.0,"Benzene ... AcOH","MP2/cc-pVTZ CP",-0.26
-64,0.9,"Peptide ... Ethene","MP2/cc-pVTZ CP",-2.6
-64,0.95,"Peptide ... Ethene","MP2/cc-pVTZ CP",-2.95
-64,1.0,"Peptide ... Ethene","MP2/cc-pVTZ CP",-2.99
-64,1.05,"Peptide ... Ethene","MP2/cc-pVTZ CP",-2.85
-64,1.1,"Peptide ... Ethene","MP2/cc-pVTZ CP",-2.63
-64,1.25,"Peptide ... Ethene","MP2/cc-pVTZ CP",-1.86
-64,1.5,"Peptide ... Ethene","MP2/cc-pVTZ CP",-0.88
-64,2.0,"Peptide ... Ethene","MP2/cc-pVTZ CP",-0.19
-65,0.9,"Pyridine ... Ethyne","MP2/cc-pVTZ CP",-3.54
-65,0.95,"Pyridine ... Ethyne","MP2/cc-pVTZ CP",-3.91
-65,1.0,"Pyridine ... Ethyne","MP2/cc-pVTZ CP",-3.99
-65,1.05,"Pyridine ... Ethyne","MP2/cc-pVTZ CP",-3.89
-65,1.1,"Pyridine ... Ethyne","MP2/cc-pVTZ CP",-3.68
-65,1.25,"Pyridine ... Ethyne","MP2/cc-pVTZ CP",-2.84
-65,1.5,"Pyridine ... Ethyne","MP2/cc-pVTZ CP",-1.67
-65,2.0,"Pyridine ... Ethyne","MP2/cc-pVTZ CP",-0.62
-66,0.9,"MeNH2 ... Pyridine","MP2/cc-pVTZ CP",-3.45
-66,0.95,"MeNH2 ... Pyridine","MP2/cc-pVTZ CP",-3.88
-66,1.0,"MeNH2 ... Pyridine","MP2/cc-pVTZ CP",-3.97
-66,1.05,"MeNH2 ... Pyridine","MP2/cc-pVTZ CP",-3.85
-66,1.1,"MeNH2 ... Pyridine","MP2/cc-pVTZ CP",-3.62
-66,1.25,"MeNH2 ... Pyridine","MP2/cc-pVTZ CP",-2.71
-66,1.5,"MeNH2 ... Pyridine","MP2/cc-pVTZ CP",-1.5
-66,2.0,"MeNH2 ... Pyridine","MP2/cc-pVTZ CP",-0.49
+label,scale,idx,energy,group
+Water ... Water,0.9,1,-4.57,E
+Water ... Water,0.95,1,-4.88,E
+Water ... Water,1,1,-4.89,E
+Water ... Water,1.05,1,-4.72,E
+Water ... Water,1.1,1,-4.45,E
+Water ... Water,1.25,1,-3.46,E
+Water ... Water,1.5,1,-2.11,E
+Water ... Water,2,1,-0.87,E
+Water ... MeOH,0.9,2,-5.19,E
+Water ... MeOH,0.95,2,-5.55,E
+Water ... MeOH,1,2,-5.57,E
+Water ... MeOH,1.05,2,-5.38,E
+Water ... MeOH,1.1,2,-5.08,E
+Water ... MeOH,1.25,2,-3.94,E
+Water ... MeOH,1.5,2,-2.39,E
+Water ... MeOH,2,2,-0.95,E
+Water ... MeNH2,0.9,3,-6.49,E
+Water ... MeNH2,0.95,3,-6.87,E
+Water ... MeNH2,1,3,-6.88,E
+Water ... MeNH2,1.05,3,-6.65,E
+Water ... MeNH2,1.1,3,-6.28,E
+Water ... MeNH2,1.25,3,-4.92,E
+Water ... MeNH2,1.5,3,-2.98,E
+Water ... MeNH2,2,3,-1.14,E
+Water ... Peptide,0.9,4,-7.63,E
+Water ... Peptide,0.95,4,-8.06,E
+Water ... Peptide,1,4,-8.08,E
+Water ... Peptide,1.05,4,-7.84,E
+Water ... Peptide,1.1,4,-7.46,E
+Water ... Peptide,1.25,4,-5.99,E
+Water ... Peptide,1.5,4,-3.83,E
+Water ... Peptide,2,4,-1.44,E
+MeOH ... MeOH,0.9,5,-5.28,E
+MeOH ... MeOH,0.95,5,-5.69,E
+MeOH ... MeOH,1,5,-5.75,E
+MeOH ... MeOH,1.05,5,-5.58,E
+MeOH ... MeOH,1.1,5,-5.28,E
+MeOH ... MeOH,1.25,5,-4.14,E
+MeOH ... MeOH,1.5,5,-2.52,E
+MeOH ... MeOH,2,5,-1.01,E
+MeOH ... MeNH2,0.9,6,-6.97,E
+MeOH ... MeNH2,0.95,6,-7.47,E
+MeOH ... MeNH2,1,6,-7.54,E
+MeOH ... MeNH2,1.05,6,-7.34,E
+MeOH ... MeNH2,1.1,6,-6.97,E
+MeOH ... MeNH2,1.25,6,-5.5,E
+MeOH ... MeNH2,1.5,6,-3.35,E
+MeOH ... MeNH2,2,6,-1.27,E
+MeOH ... Peptide,0.9,7,-7.63,E
+MeOH ... Peptide,0.95,7,-8.14,E
+MeOH ... Peptide,1,7,-8.22,E
+MeOH ... Peptide,1.05,7,-8.02,E
+MeOH ... Peptide,1.1,7,-7.66,E
+MeOH ... Peptide,1.25,7,-6.18,E
+MeOH ... Peptide,1.5,7,-3.65,E
+MeOH ... Peptide,2,7,-1.1,E
+MeOH ... Water,0.9,8,-4.59,E
+MeOH ... Water,0.95,8,-4.95,E
+MeOH ... Water,1,8,-5,E
+MeOH ... Water,1.05,8,-4.85,E
+MeOH ... Water,1.1,8,-4.59,E
+MeOH ... Water,1.25,8,-3.59,E
+MeOH ... Water,1.5,8,-2.2,E
+MeOH ... Water,2,8,-0.91,E
+MeNH2 ... MeOH,0.9,9,-2.81,M
+MeNH2 ... MeOH,0.95,9,-3.04,M
+MeNH2 ... MeOH,1,9,-3.04,M
+MeNH2 ... MeOH,1.05,9,-2.9,M
+MeNH2 ... MeOH,1.1,9,-2.69,M
+MeNH2 ... MeOH,1.25,9,-1.98,M
+MeNH2 ... MeOH,1.5,9,-1.1,M
+MeNH2 ... MeOH,2,9,-0.39,M
+MeNH2 ... MeNH2,0.9,10,-3.7,M
+MeNH2 ... MeNH2,0.95,10,-4.09,M
+MeNH2 ... MeNH2,1,10,-4.15,M
+MeNH2 ... MeNH2,1.05,10,-4.01,M
+MeNH2 ... MeNH2,1.1,10,-3.75,M
+MeNH2 ... MeNH2,1.25,10,-2.79,M
+MeNH2 ... MeNH2,1.5,10,-1.31,M
+MeNH2 ... MeNH2,2,10,-0.39,M
+MeNH2 ... Peptide,0.9,11,-4.95,M
+MeNH2 ... Peptide,0.95,11,-5.36,M
+MeNH2 ... Peptide,1,11,-5.41,M
+MeNH2 ... Peptide,1.05,11,-5.24,M
+MeNH2 ... Peptide,1.1,11,-4.94,M
+MeNH2 ... Peptide,1.25,11,-3.21,M
+MeNH2 ... Peptide,1.5,11,-1.4,M
+MeNH2 ... Peptide,2,11,-0.46,M
+MeNH2 ... Water,0.9,12,-6.75,E
+MeNH2 ... Water,0.95,12,-7.2,E
+MeNH2 ... Water,1,12,-7.25,E
+MeNH2 ... Water,1.05,12,-7.03,E
+MeNH2 ... Water,1.1,12,-6.66,E
+MeNH2 ... Water,1.25,12,-5.22,E
+MeNH2 ... Water,1.5,12,-3.15,E
+MeNH2 ... Water,2,12,-1.2,E
+Peptide ... MeOH,0.9,13,-5.67,E
+Peptide ... MeOH,0.95,13,-6.11,E
+Peptide ... MeOH,1,13,-6.18,E
+Peptide ... MeOH,1.05,13,-6.03,E
+Peptide ... MeOH,1.1,13,-5.74,E
+Peptide ... MeOH,1.25,13,-4.6,E
+Peptide ... MeOH,1.5,13,-2.95,E
+Peptide ... MeOH,2,13,-1.3,E
+Peptide ... MeNH2,0.9,14,-6.81,E
+Peptide ... MeNH2,0.95,14,-7.34,E
+Peptide ... MeNH2,1,14,-7.45,E
+Peptide ... MeNH2,1.05,14,-7.29,E
+Peptide ... MeNH2,1.1,14,-6.97,E
+Peptide ... MeNH2,1.25,14,-5.61,E
+Peptide ... MeNH2,1.5,14,-3.55,E
+Peptide ... MeNH2,2,14,-1.49,E
+Peptide ... Peptide,0.9,15,-8.02,E
+Peptide ... Peptide,0.95,15,-8.53,E
+Peptide ... Peptide,1,15,-8.62,E
+Peptide ... Peptide,1.05,15,-8.45,E
+Peptide ... Peptide,1.1,15,-8.1,E
+Peptide ... Peptide,1.25,15,-6.66,E
+Peptide ... Peptide,1.5,15,-4.42,E
+Peptide ... Peptide,2,15,-1.77,E
+Peptide ... Water,0.9,16,-4.7,E
+Peptide ... Water,0.95,16,-5.06,E
+Peptide ... Water,1,16,-5.12,E
+Peptide ... Water,1.05,16,-4.98,E
+Peptide ... Water,1.1,16,-4.74,E
+Peptide ... Water,1.25,16,-3.79,E
+Peptide ... Water,1.5,16,-2.45,E
+Peptide ... Water,2,16,-1.13,E
+Uracil ... Uracil (BP),0.9,17,-15.7,E
+Uracil ... Uracil (BP),0.95,17,-16.9,E
+Uracil ... Uracil (BP),1,17,-17.18,E
+Uracil ... Uracil (BP),1.05,17,-16.86,E
+Uracil ... Uracil (BP),1.1,17,-16.17,E
+Uracil ... Uracil (BP),1.25,17,-13.15,E
+Uracil ... Uracil (BP),1.5,17,-8.35,E
+Uracil ... Uracil (BP),2,17,-3.33,E
+Water ... Pyridine,0.9,18,-6.39,E
+Water ... Pyridine,0.95,18,-6.8,E
+Water ... Pyridine,1,18,-6.83,E
+Water ... Pyridine,1.05,18,-6.62,E
+Water ... Pyridine,1.1,18,-6.27,E
+Water ... Pyridine,1.25,18,-4.93,E
+Water ... Pyridine,1.5,18,-3.01,E
+Water ... Pyridine,2,18,-1.19,E
+MeOH ... Pyridine,0.9,19,-6.78,E
+MeOH ... Pyridine,0.95,19,-7.31,E
+MeOH ... Pyridine,1,19,-7.4,E
+MeOH ... Pyridine,1.05,19,-7.23,E
+MeOH ... Pyridine,1.1,19,-6.88,E
+MeOH ... Pyridine,1.25,19,-5.48,E
+MeOH ... Pyridine,1.5,19,-3.38,E
+MeOH ... Pyridine,2,19,-1.33,E
+AcOH ... AcOH,0.9,20,-17.45,E
+AcOH ... AcOH,0.95,20,-18.79,E
+AcOH ... AcOH,1,20,-19.09,E
+AcOH ... AcOH,1.05,20,-18.72,E
+AcOH ... AcOH,1.1,20,-17.94,E
+AcOH ... AcOH,1.25,20,-14.56,E
+AcOH ... AcOH,1.5,20,-9.21,E
+AcOH ... AcOH,2,20,-3.59,E
+AcNH2 ... AcNH2,0.9,21,-14.93,E
+AcNH2 ... AcNH2,0.95,21,-16.03,E
+AcNH2 ... AcNH2,1,21,-16.26,E
+AcNH2 ... AcNH2,1.05,21,-15.94,E
+AcNH2 ... AcNH2,1.1,21,-15.26,E
+AcNH2 ... AcNH2,1.25,21,-12.42,E
+AcNH2 ... AcNH2,1.5,21,-8,E
+AcNH2 ... AcNH2,2,21,-3,E
+AcOH ... Uracil,0.9,22,-17.9,E
+AcOH ... Uracil,0.95,22,-19.19,E
+AcOH ... Uracil,1,22,-19.49,E
+AcOH ... Uracil,1.05,22,-19.15,E
+AcOH ... Uracil,1.1,22,-18.41,E
+AcOH ... Uracil,1.25,22,-15.14,E
+AcOH ... Uracil,1.5,22,-9.86,E
+AcOH ... Uracil,2,22,-4.15,E
+AcNH2 ... Uracil,0.9,23,-17.7,E
+AcNH2 ... Uracil,0.95,23,-18.89,E
+AcNH2 ... Uracil,1,23,-19.19,E
+AcNH2 ... Uracil,1.05,23,-18.9,E
+AcNH2 ... Uracil,1.1,23,-18.22,E
+AcNH2 ... Uracil,1.25,23,-15.21,E
+AcNH2 ... Uracil,1.5,23,-10.23,E
+AcNH2 ... Uracil,2,23,-4.65,E
+Benzene ... Benzene (pi-pi),0.9,24,-0.23,D
+Benzene ... Benzene (pi-pi),0.95,24,-2.07,D
+Benzene ... Benzene (pi-pi),1,24,-2.74,D
+Benzene ... Benzene (pi-pi),1.05,24,-2.8,D
+Benzene ... Benzene (pi-pi),1.1,24,-2.58,D
+Benzene ... Benzene (pi-pi),1.25,24,-1.54,D
+Benzene ... Benzene (pi-pi),1.5,24,-0.49,D
+Benzene ... Benzene (pi-pi),2,24,-0.06,D
+Pyridine ... Pyridine (pi-pi),0.9,25,-1.32,D
+Pyridine ... Pyridine (pi-pi),0.95,25,-3.17,D
+Pyridine ... Pyridine (pi-pi),1,25,-3.83,D
+Pyridine ... Pyridine (pi-pi),1.05,25,-3.86,D
+Pyridine ... Pyridine (pi-pi),1.1,25,-3.58,D
+Pyridine ... Pyridine (pi-pi),1.25,25,-2.36,D
+Pyridine ... Pyridine (pi-pi),1.5,25,-0.96,D
+Pyridine ... Pyridine (pi-pi),2,25,-0.24,D
+Uracil ... Uracil (pi-pi),0.9,26,-7.86,M
+Uracil ... Uracil (pi-pi),0.95,26,-9.5,M
+Uracil ... Uracil (pi-pi),1,26,-9.82,M
+Uracil ... Uracil (pi-pi),1.05,26,-9.43,M
+Uracil ... Uracil (pi-pi),1.1,26,-8.69,M
+Uracil ... Uracil (pi-pi),1.25,26,-6.07,M
+Uracil ... Uracil (pi-pi),1.5,26,-3.1,M
+Uracil ... Uracil (pi-pi),2,26,-0.99,M
+Benzene ... Pyridine (pi-pi),0.9,27,-0.73,D
+Benzene ... Pyridine (pi-pi),0.95,27,-2.69,D
+Benzene ... Pyridine (pi-pi),1,27,-3.37,D
+Benzene ... Pyridine (pi-pi),1.05,27,-3.4,D
+Benzene ... Pyridine (pi-pi),1.1,27,-3.13,D
+Benzene ... Pyridine (pi-pi),1.25,27,-1.97,D
+Benzene ... Pyridine (pi-pi),1.5,27,-0.72,D
+Benzene ... Pyridine (pi-pi),2,27,-0.15,D
+Benzene ... Uracil (pi-pi),0.9,28,-3.53,D
+Benzene ... Uracil (pi-pi),0.95,28,-5.22,D
+Benzene ... Uracil (pi-pi),1,28,-5.71,D
+Benzene ... Uracil (pi-pi),1.05,28,-5.55,D
+Benzene ... Uracil (pi-pi),1.1,28,-5.08,D
+Benzene ... Uracil (pi-pi),1.25,28,-3.29,D
+Benzene ... Uracil (pi-pi),1.5,28,-1.36,D
+Benzene ... Uracil (pi-pi),2,28,-0.25,D
+Pyridine ... Uracil (pi-pi),0.9,29,-3.74,M
+Pyridine ... Uracil (pi-pi),0.95,29,-6.17,M
+Pyridine ... Uracil (pi-pi),1,29,-6.81,M
+Pyridine ... Uracil (pi-pi),1.05,29,-6.58,M
+Pyridine ... Uracil (pi-pi),1.1,29,-5.97,M
+Pyridine ... Uracil (pi-pi),1.25,29,-3.87,M
+Pyridine ... Uracil (pi-pi),1.5,29,-1.78,M
+Pyridine ... Uracil (pi-pi),2,29,-0.53,M
+Benzene ... Ethene,0.9,30,-0.26,D
+Benzene ... Ethene,0.95,30,-1.13,D
+Benzene ... Ethene,1,30,-1.41,D
+Benzene ... Ethene,1.05,30,-1.4,D
+Benzene ... Ethene,1.1,30,-1.26,D
+Benzene ... Ethene,1.25,30,-0.69,D
+Benzene ... Ethene,1.5,30,-0.17,D
+Benzene ... Ethene,2,30,0.01,D
+Uracil ... Ethene,0.9,31,-2.57,D
+Uracil ... Ethene,0.95,31,-3.24,D
+Uracil ... Ethene,1,31,-3.38,D
+Uracil ... Ethene,1.05,31,-3.24,D
+Uracil ... Ethene,1.1,31,-2.96,D
+Uracil ... Ethene,1.25,31,-1.99,D
+Uracil ... Ethene,1.5,31,-0.93,D
+Uracil ... Ethene,2,31,-0.25,D
+Uracil ... Ethyne,0.9,32,-2.79,M
+Uracil ... Ethyne,0.95,32,-3.56,M
+Uracil ... Ethyne,1,32,-3.74,M
+Uracil ... Ethyne,1.05,32,-3.59,M
+Uracil ... Ethyne,1.1,32,-3.29,M
+Uracil ... Ethyne,1.25,32,-2.23,M
+Uracil ... Ethyne,1.5,32,-1.04,M
+Uracil ... Ethyne,2,32,-0.27,M
+Pyridine ... Ethene,0.9,33,-0.89,D
+Pyridine ... Ethene,0.95,33,-1.62,D
+Pyridine ... Ethene,1,33,-1.86,D
+Pyridine ... Ethene,1.05,33,-1.83,D
+Pyridine ... Ethene,1.1,33,-1.67,D
+Pyridine ... Ethene,1.25,33,-1.03,D
+Pyridine ... Ethene,1.5,33,-0.37,D
+Pyridine ... Ethene,2,33,-0.05,D
+Pentane ... Pentane,0.9,34,-2.86,D
+Pentane ... Pentane,0.95,34,-3.62,D
+Pentane ... Pentane,1,34,-3.77,D
+Pentane ... Pentane,1.05,34,-3.61,D
+Pentane ... Pentane,1.1,34,-3.3,D
+Pentane ... Pentane,1.25,34,-2.24,D
+Pentane ... Pentane,1.5,34,-1.05,D
+Pentane ... Pentane,2,34,-0.27,D
+Neopentane ... Pentane,0.9,35,-1.85,D
+Neopentane ... Pentane,0.95,35,-2.49,D
+Neopentane ... Pentane,1,35,-2.61,D
+Neopentane ... Pentane,1.05,35,-2.48,D
+Neopentane ... Pentane,1.1,35,-2.25,D
+Neopentane ... Pentane,1.25,35,-1.5,D
+Neopentane ... Pentane,1.5,35,-0.7,D
+Neopentane ... Pentane,2,35,-0.18,D
+Neopentane ... Neopentane,0.9,36,-1.45,D
+Neopentane ... Neopentane,0.95,36,-1.74,D
+Neopentane ... Neopentane,1,36,-1.77,D
+Neopentane ... Neopentane,1.05,36,-1.68,D
+Neopentane ... Neopentane,1.1,36,-1.54,D
+Neopentane ... Neopentane,1.25,36,-1.05,D
+Neopentane ... Neopentane,1.5,36,-0.5,D
+Neopentane ... Neopentane,2,36,-0.14,D
+Cyclopentane ... Neopentane,0.9,37,-1.61,D
+Cyclopentane ... Neopentane,0.95,37,-2.25,D
+Cyclopentane ... Neopentane,1,37,-2.41,D
+Cyclopentane ... Neopentane,1.05,37,-2.33,D
+Cyclopentane ... Neopentane,1.1,37,-2.14,D
+Cyclopentane ... Neopentane,1.25,37,-1.47,D
+Cyclopentane ... Neopentane,1.5,37,-0.71,D
+Cyclopentane ... Neopentane,2,37,-0.19,D
+Cyclopentane ... Cyclopentane,0.9,38,-2.24,D
+Cyclopentane ... Cyclopentane,0.95,38,-2.84,D
+Cyclopentane ... Cyclopentane,1,38,-3,D
+Cyclopentane ... Cyclopentane,1.05,38,-2.86,D
+Cyclopentane ... Cyclopentane,1.1,38,-2.6,D
+Cyclopentane ... Cyclopentane,1.25,38,-1.71,D
+Cyclopentane ... Cyclopentane,1.5,38,-0.79,D
+Cyclopentane ... Cyclopentane,2,38,-0.2,D
+Benzene ... Cyclopentane,0.9,39,-2.16,D
+Benzene ... Cyclopentane,0.95,39,-3.24,D
+Benzene ... Cyclopentane,1,39,-3.57,D
+Benzene ... Cyclopentane,1.05,39,-3.47,D
+Benzene ... Cyclopentane,1.1,39,-3.17,D
+Benzene ... Cyclopentane,1.25,39,-2.07,D
+Benzene ... Cyclopentane,1.5,39,-0.9,D
+Benzene ... Cyclopentane,2,39,-0.19,D
+Benzene ... Neopentane,0.9,40,-1.86,D
+Benzene ... Neopentane,0.95,40,-2.68,D
+Benzene ... Neopentane,1,40,-2.89,D
+Benzene ... Neopentane,1.05,40,-2.8,D
+Benzene ... Neopentane,1.1,40,-2.57,D
+Benzene ... Neopentane,1.25,40,-1.7,D
+Benzene ... Neopentane,1.5,40,-0.77,D
+Benzene ... Neopentane,2,40,-0.19,D
+Uracil ... Pentane,0.9,41,-3.83,D
+Uracil ... Pentane,0.95,41,-4.69,D
+Uracil ... Pentane,1,41,-4.84,D
+Uracil ... Pentane,1.05,41,-4.6,D
+Uracil ... Pentane,1.1,41,-4.08,D
+Uracil ... Pentane,1.25,41,-2.44,D
+Uracil ... Pentane,1.5,41,-0.98,D
+Uracil ... Pentane,2,41,-0.21,D
+Uracil ... Cyclopentane,0.9,42,-3.05,D
+Uracil ... Cyclopentane,0.95,42,-3.97,D
+Uracil ... Cyclopentane,1,42,-4.13,D
+Uracil ... Cyclopentane,1.05,42,-3.92,D
+Uracil ... Cyclopentane,1.1,42,-3.54,D
+Uracil ... Cyclopentane,1.25,42,-2.29,D
+Uracil ... Cyclopentane,1.5,42,-1.02,D
+Uracil ... Cyclopentane,2,42,-0.25,D
+Uracil ... Neopentane,0.9,43,-2.87,D
+Uracil ... Neopentane,0.95,43,-3.6,D
+Uracil ... Neopentane,1,43,-3.7,D
+Uracil ... Neopentane,1.05,43,-3.49,D
+Uracil ... Neopentane,1.1,43,-3.15,D
+Uracil ... Neopentane,1.25,43,-2.05,D
+Uracil ... Neopentane,1.5,43,-0.92,D
+Uracil ... Neopentane,2,43,-0.23,D
+Ethene ... Pentane,0.9,44,-1.66,D
+Ethene ... Pentane,0.95,44,-1.97,D
+Ethene ... Pentane,1,44,-1.99,D
+Ethene ... Pentane,1.05,44,-1.86,D
+Ethene ... Pentane,1.1,44,-1.67,D
+Ethene ... Pentane,1.25,44,-1.09,D
+Ethene ... Pentane,1.5,44,-0.49,D
+Ethene ... Pentane,2,44,-0.12,D
+Ethyne ... Pentane,0.9,45,-1.13,D
+Ethyne ... Pentane,0.95,45,-1.63,D
+Ethyne ... Pentane,1,45,-1.75,D
+Ethyne ... Pentane,1.05,45,-1.68,D
+Ethyne ... Pentane,1.1,45,-1.52,D
+Ethyne ... Pentane,1.25,45,-0.98,D
+Ethyne ... Pentane,1.5,45,-0.42,D
+Ethyne ... Pentane,2,45,-0.1,D
+Peptide ... Pentane,0.9,46,-3.75,D
+Peptide ... Pentane,0.95,46,-4.21,D
+Peptide ... Pentane,1,46,-4.24,D
+Peptide ... Pentane,1.05,46,-4.05,D
+Peptide ... Pentane,1.1,46,-3.73,D
+Peptide ... Pentane,1.25,46,-2.63,D
+Peptide ... Pentane,1.5,46,-1.19,D
+Peptide ... Pentane,2,46,-0.29,D
+Benzene ... Benzene (TS),0.9,47,-1.64,D
+Benzene ... Benzene (TS),0.95,47,-2.58,D
+Benzene ... Benzene (TS),1,47,-2.87,D
+Benzene ... Benzene (TS),1.05,47,-2.82,D
+Benzene ... Benzene (TS),1.1,47,-2.6,D
+Benzene ... Benzene (TS),1.25,47,-1.77,D
+Benzene ... Benzene (TS),1.5,47,-0.83,D
+Benzene ... Benzene (TS),2,47,-0.22,D
+Pyridine ... Pyridine (TS),0.9,48,-2.53,D
+Pyridine ... Pyridine (TS),0.95,48,-3.31,D
+Pyridine ... Pyridine (TS),1,48,-3.53,D
+Pyridine ... Pyridine (TS),1.05,48,-3.45,D
+Pyridine ... Pyridine (TS),1.1,48,-3.22,D
+Pyridine ... Pyridine (TS),1.25,48,-2.29,D
+Pyridine ... Pyridine (TS),1.5,48,-1.18,D
+Pyridine ... Pyridine (TS),2,48,-0.37,D
+Benzene ... Pyridine (TS),0.9,49,-2.09,D
+Benzene ... Pyridine (TS),0.95,49,-3.04,D
+Benzene ... Pyridine (TS),1,49,-3.32,D
+Benzene ... Pyridine (TS),1.05,49,-3.26,D
+Benzene ... Pyridine (TS),1.1,49,-3.02,D
+Benzene ... Pyridine (TS),1.25,49,-2.1,D
+Benzene ... Pyridine (TS),1.5,49,-1.05,D
+Benzene ... Pyridine (TS),2,49,-0.33,D
+Benzene ... Ethyne (CH-pi),0.9,50,-1.87,M
+Benzene ... Ethyne (CH-pi),0.95,50,-2.65,M
+Benzene ... Ethyne (CH-pi),1,50,-2.86,M
+Benzene ... Ethyne (CH-pi),1.05,50,-2.79,M
+Benzene ... Ethyne (CH-pi),1.1,50,-2.58,M
+Benzene ... Ethyne (CH-pi),1.25,50,-1.79,M
+Benzene ... Ethyne (CH-pi),1.5,50,-0.89,M
+Benzene ... Ethyne (CH-pi),2,50,-0.27,M
+Ethyne ... Ethyne (TS),0.9,51,-1.21,M
+Ethyne ... Ethyne (TS),0.95,51,-1.47,M
+Ethyne ... Ethyne (TS),1,51,-1.52,M
+Ethyne ... Ethyne (TS),1.05,51,-1.46,M
+Ethyne ... Ethyne (TS),1.1,51,-1.35,M
+Ethyne ... Ethyne (TS),1.25,51,-0.93,M
+Ethyne ... Ethyne (TS),1.5,51,-0.46,M
+Ethyne ... Ethyne (TS),2,51,-0.14,M
+Benzene ... AcOH (OH-pi),0.9,52,-3.97,M
+Benzene ... AcOH (OH-pi),0.95,52,-4.58,M
+Benzene ... AcOH (OH-pi),1,52,-4.7,M
+Benzene ... AcOH (OH-pi),1.05,52,-4.55,M
+Benzene ... AcOH (OH-pi),1.1,52,-4.25,M
+Benzene ... AcOH (OH-pi),1.25,52,-3.13,M
+Benzene ... AcOH (OH-pi),1.5,52,-1.7,M
+Benzene ... AcOH (OH-pi),2,52,-0.55,M
+Benzene ... AcNH2 (NH-pi),0.9,53,-3.79,M
+Benzene ... AcNH2 (NH-pi),0.95,53,-4.27,M
+Benzene ... AcNH2 (NH-pi),1,53,-4.36,M
+Benzene ... AcNH2 (NH-pi),1.05,53,-4.23,M
+Benzene ... AcNH2 (NH-pi),1.1,53,-3.97,M
+Benzene ... AcNH2 (NH-pi),1.25,53,-2.97,M
+Benzene ... AcNH2 (NH-pi),1.5,53,-1.65,M
+Benzene ... AcNH2 (NH-pi),2,53,-0.48,M
+Benzene ... Water (OH-pi),0.9,54,-2.8,M
+Benzene ... Water (OH-pi),0.95,54,-3.21,M
+Benzene ... Water (OH-pi),1,54,-3.27,M
+Benzene ... Water (OH-pi),1.05,54,-3.13,M
+Benzene ... Water (OH-pi),1.1,54,-2.9,M
+Benzene ... Water (OH-pi),1.25,54,-2.1,M
+Benzene ... Water (OH-pi),1.5,54,-1.16,M
+Benzene ... Water (OH-pi),2,54,-0.42,M
+Benzene ... MeOH (OH-pi),0.9,55,-3.45,M
+Benzene ... MeOH (OH-pi),0.95,55,-4.05,M
+Benzene ... MeOH (OH-pi),1,55,-4.19,M
+Benzene ... MeOH (OH-pi),1.05,55,-4.07,M
+Benzene ... MeOH (OH-pi),1.1,55,-3.8,M
+Benzene ... MeOH (OH-pi),1.25,55,-2.8,M
+Benzene ... MeOH (OH-pi),1.5,55,-1.53,M
+Benzene ... MeOH (OH-pi),2,55,-0.52,M
+Benzene ... MeNH2 (NH-pi),0.9,56,-2.51,D
+Benzene ... MeNH2 (NH-pi),0.95,56,-3.09,D
+Benzene ... MeNH2 (NH-pi),1,56,-3.23,D
+Benzene ... MeNH2 (NH-pi),1.05,56,-3.12,D
+Benzene ... MeNH2 (NH-pi),1.1,56,-2.86,D
+Benzene ... MeNH2 (NH-pi),1.25,56,-1.95,D
+Benzene ... MeNH2 (NH-pi),1.5,56,-0.94,D
+Benzene ... MeNH2 (NH-pi),2,56,-0.26,D
+Benzene ... Peptide (NH-pi),0.9,57,-3.75,M
+Benzene ... Peptide (NH-pi),0.95,57,-4.96,M
+Benzene ... Peptide (NH-pi),1,57,-5.28,M
+Benzene ... Peptide (NH-pi),1.05,57,-5.14,M
+Benzene ... Peptide (NH-pi),1.1,57,-4.78,M
+Benzene ... Peptide (NH-pi),1.25,57,-3.41,M
+Benzene ... Peptide (NH-pi),1.5,57,-1.8,M
+Benzene ... Peptide (NH-pi),2,57,-0.62,M
+Pyridine ... Pyridine (CH-N),0.9,58,-2.8,M
+Pyridine ... Pyridine (CH-N),0.95,58,-3.82,M
+Pyridine ... Pyridine (CH-N),1,58,-4.15,M
+Pyridine ... Pyridine (CH-N),1.05,58,-3.89,M
+Pyridine ... Pyridine (CH-N),1.1,58,-3.45,M
+Pyridine ... Pyridine (CH-N),1.25,58,-2.18,M
+Pyridine ... Pyridine (CH-N),1.5,58,-1.01,M
+Pyridine ... Pyridine (CH-N),2,58,-0.28,M
+Ethyne ... Water (CH-O),0.9,59,-2.52,E
+Ethyne ... Water (CH-O),0.95,59,-2.8,E
+Ethyne ... Water (CH-O),1,59,-2.85,E
+Ethyne ... Water (CH-O),1.05,59,-2.76,E
+Ethyne ... Water (CH-O),1.1,59,-2.6,E
+Ethyne ... Water (CH-O),1.25,59,-1.98,E
+Ethyne ... Water (CH-O),1.5,59,-1.17,E
+Ethyne ... Water (CH-O),2,59,-0.46,E
+Ethyne ... AcOH (OH-pi),0.9,60,-4.28,E
+Ethyne ... AcOH (OH-pi),0.95,60,-4.78,E
+Ethyne ... AcOH (OH-pi),1,60,-4.86,E
+Ethyne ... AcOH (OH-pi),1.05,60,-4.69,E
+Ethyne ... AcOH (OH-pi),1.1,60,-4.39,E
+Ethyne ... AcOH (OH-pi),1.25,60,-3.26,E
+Ethyne ... AcOH (OH-pi),1.5,60,-1.77,E
+Ethyne ... AcOH (OH-pi),2,60,-0.56,E
+Pentane ... AcOH,0.9,61,-2.7,D
+Pentane ... AcOH,0.95,61,-2.9,D
+Pentane ... AcOH,1,61,-2.88,D
+Pentane ... AcOH,1.05,61,-2.73,D
+Pentane ... AcOH,1.1,61,-2.52,D
+Pentane ... AcOH,1.25,61,-1.79,D
+Pentane ... AcOH,1.5,61,-0.78,D
+Pentane ... AcOH,2,61,-0.17,D
+Pentane ... AcNH2,0.9,62,-3.15,D
+Pentane ... AcNH2,0.95,62,-3.5,D
+Pentane ... AcNH2,1,62,-3.51,D
+Pentane ... AcNH2,1.05,62,-3.32,D
+Pentane ... AcNH2,1.1,62,-3.04,D
+Pentane ... AcNH2,1.25,62,-2.12,D
+Pentane ... AcNH2,1.5,62,-1.04,D
+Pentane ... AcNH2,2,62,-0.27,D
+Benzene ... AcOH,0.9,63,-2.73,D
+Benzene ... AcOH,0.95,63,-3.6,D
+Benzene ... AcOH,1,63,-3.8,D
+Benzene ... AcOH,1.05,63,-3.65,D
+Benzene ... AcOH,1.1,63,-3.34,D
+Benzene ... AcOH,1.25,63,-2.24,D
+Benzene ... AcOH,1.5,63,-1.02,D
+Benzene ... AcOH,2,63,-0.26,D
+Peptide ... Ethene,0.9,64,-2.6,M
+Peptide ... Ethene,0.95,64,-2.95,M
+Peptide ... Ethene,1,64,-2.99,M
+Peptide ... Ethene,1.05,64,-2.85,M
+Peptide ... Ethene,1.1,64,-2.63,M
+Peptide ... Ethene,1.25,64,-1.86,M
+Peptide ... Ethene,1.5,64,-0.88,M
+Peptide ... Ethene,2,64,-0.19,M
+Pyridine ... Ethyne,0.9,65,-3.54,E
+Pyridine ... Ethyne,0.95,65,-3.91,E
+Pyridine ... Ethyne,1,65,-3.99,E
+Pyridine ... Ethyne,1.05,65,-3.89,E
+Pyridine ... Ethyne,1.1,65,-3.68,E
+Pyridine ... Ethyne,1.25,65,-2.84,E
+Pyridine ... Ethyne,1.5,65,-1.67,E
+Pyridine ... Ethyne,2,65,-0.62,E
+MeNH2 ... Pyridine,0.9,66,-3.45,M
+MeNH2 ... Pyridine,0.95,66,-3.88,M
+MeNH2 ... Pyridine,1,66,-3.97,M
+MeNH2 ... Pyridine,1.05,66,-3.85,M
+MeNH2 ... Pyridine,1.1,66,-3.62,M
+MeNH2 ... Pyridine,1.25,66,-2.71,M
+MeNH2 ... Pyridine,1.5,66,-1.5,M
+MeNH2 ... Pyridine,2,66,-0.49,M
