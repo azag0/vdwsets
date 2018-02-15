@@ -26,7 +26,7 @@ class Dataset:
         self.clusters[key] = value
 
     def load_geoms(self):
-        from caflib.Tools import geomlib
+        from caf.Tools import geomlib
 
         assert self._geoms is None
         path_geoms = {}
