@@ -2,7 +2,6 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 from pkg_resources import resource_stream, resource_filename
-import pandas as pd
 
 from .dataset import Dataset, Cluster
 
@@ -11,6 +10,7 @@ kjmol = 2625.5
 
 
 def get_s22():
+    import pandas as pd
     df = pd.read_csv(
         resource_stream(__name__, 'data/s22/energies.csv'),
         index_col='label scale'.split()
@@ -32,6 +32,7 @@ def get_s22():
 
 
 def get_s66x8():
+    import pandas as pd
     df = pd.read_csv(
         resource_stream(__name__, 'data/s66x8/energies.csv'),
         index_col='label scale'.split()
