@@ -5,9 +5,6 @@ from pkg_resources import resource_stream, resource_filename
 
 from .dataset import Dataset, Cluster
 
-kcal = 627.509
-kjmol = 2625.5
-
 
 def get_s22():
     import pandas as pd
@@ -50,6 +47,28 @@ def get_s66x8():
         ds[label, scale] = Cluster(
             fragments,
             lambda x: x['complex']-x['fragment-1']-x['fragment-2']
+        )
+    return ds
+
+
+def get_x23():
+    import pandas as pd
+    df = pd.read_csv(
+        resource_stream(__name__, 'data/x23/energies.csv'),
+        index_col='label scale'.split()
+    )
+    ds = Dataset('X23', df)
+    for (label, scale), row in df.iterrows():
+        prefix = 'data/x23/geoms/' + row['geomname']
+        fragments = {
+            'molecule': resource_filename(__name__, prefix + '_g.xyz'),
+            'crystal': resource_filename(__name__, prefix + '.xyzc'),
+        }
+        with open(fragments['molecule']) as fm, open(fragments['crystal']) as fc:
+            n = int(next(fc))/int(next(fm))
+        ds[label, scale] = Cluster(
+            fragments,
+            lambda x, n=n: x['crystal']/n-x['molecule']
         )
     return ds
 
@@ -144,29 +163,6 @@ def get_s66x8():
 #                     fragment = 'guest'
 #                 cluster[fragment] = geomid
 #             ds[(str(idx) + subidx,)] = cluster
-#     return ds
-#
-#
-# def get_x23(limit=inf):
-#     ds = Dataset('X23')
-#     with (root/'x23/energies.csv').open() as f:
-#         lines = [l.strip().split(';') for l in f]
-#     refs = {line[0]: float(line[2]) for line in lines[1:]}
-#     for i, path in enumerate(sorted((root/'x23/geoms').glob('*_g.xyz'))):
-#         if i >= limit:
-#             continue
-#         name = path.stem.split('_')[0]
-#         cluster = Cluster(energies={'ref': refs[name]/kjmol*kcal})
-#         for fragment, geom in [
-#                 ('molecule', Molecule(geomlib.readfile(path, 'xyzc').atoms)),
-#                 ('crystal', geomlib.readfile(str(path).replace('_g', ''), 'xyzc'))
-#         ]:
-#             geomid = geom.hash()
-#             ds.geoms[geomid] = geom
-#             cluster[fragment] = geomid
-#         n = len(ds.geoms[cluster.fragments['crystal']])//len(ds.geoms[cluster.fragments['molecule']])
-#         cluster._intene = lambda x, n=n: x['crystal']/n-x['molecule']
-#         ds[(name,)] = cluster
 #     return ds
 #
 #
