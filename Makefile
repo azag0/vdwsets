@@ -1,4 +1,4 @@
-DATASETS = s22 s66x8
+DATASETS = s22 s66x8 s12l
 BLDDIR = build
 DATADIR = vdwsets/data
 UTILDIR = utils

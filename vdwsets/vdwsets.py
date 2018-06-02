@@ -28,6 +28,28 @@ def get_s22():
     return ds
 
 
+def get_s12l():
+    import pandas as pd
+    df = pd.read_csv(
+        resource_stream(__name__, 'data/s12l/energies.csv'),
+        index_col='label scale'.split()
+    )
+    ds = Dataset('S12L', df)
+    for (label, scale), row in df.iterrows():
+        idx, subidx = label
+        fragments = {}
+        for fragment in ['host', 'complex', 'guest']:
+            filename = f'data/s12l/geoms/{idx}' \
+                f'-{fragment if fragment != "guest" else "monomer"}' \
+                f'-{subidx if fragment != "host" else ""}.xyz'
+            fragments[fragment] = resource_filename(__name__, filename)
+        ds[label, scale] = Cluster(
+            fragments,
+            lambda x: x['complex']-x['host']-x['guest']
+        )
+    return ds
+
+
 def get_s66x8():
     import pandas as pd
     df = pd.read_csv(
@@ -133,36 +155,6 @@ def get_x23():
 #                 fragment = 'fragment-{}'.format(i)
 #             cluster[fragment] = geomid
 #         ds[(label, dist)] = cluster
-#     return ds
-#
-#
-# def get_s12l(limit=inf):
-#     ds = Dataset('S12L')
-#     with (root/'s12l/energies.csv').open() as f:
-#         lines = [l.strip().split(';') for l in f]
-#     refs = {line[0]: {
-#         refname: float(ene) if ene else None for refname, ene
-#         in zip(lines[0][1:], line[1:])
-#     } for line in lines[1:]}
-#     for idx in range(2, 8):
-#         if idx-1 > limit:
-#             continue
-#         for subidx in 'ab':
-#             cluster = Cluster(
-#                 energies=refs[str(idx) + subidx],
-#                 intene=lambda x: x['complex']-x['host']-x['guest']
-#             )
-#             for fragment in ['host', 'complex', 'monomer']:
-#                 filename = '{}-{}-{}.xyz'.format(
-#                     idx, fragment, subidx if fragment != 'host' else ''
-#                 )
-#                 geom = geomlib.readfile(root/'s12l/geoms'/filename)
-#                 geomid = geom.hash()
-#                 ds.geoms[geomid] = geom
-#                 if fragment == 'monomer':
-#                     fragment = 'guest'
-#                 cluster[fragment] = geomid
-#             ds[(str(idx) + subidx,)] = cluster
 #     return ds
 #
 #
